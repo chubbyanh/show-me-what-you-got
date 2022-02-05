@@ -79,6 +79,23 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 
 ## Testing 
 ### Manual Testing
+__User Stories:__
+- As a player, I want to know about this game's rules.
+   - Player can learn quickly about the game's rules by clicking on the Game Rules button. 
+- As a player, I want to turn on/ turn off the sound as I wish.
+   - The sound is off on default. Player can turn the sound on by clicking on the Sound button. 
+- As a player, I want to choose the level of difficulties and the play mode before starting the game.
+   - When player clicks on the Play button, there will be a pop-up to help them choose the level and mode that they want to play at. 
+- As a player, I want to switch to another level of difficulties and/or another play mode.
+   - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch. 
+- As a player, I want to quit the game at any time.
+   - There is a Quit button on top of the game area to help player quit at any time. 
+- As a player, I want to know if I won or lost.
+   - When player finishes a game, there will be a pop-up to let them know if they won or lost. 
+- As a solo player, I want to know how much time I have left to finish the game.
+   - There is a countdown timer on the top of the game area to help player know how much time they have left. 
+- As a solo player, I want to know how many attemps I have made to finish this game.
+   - When player finishes a game, there will be a pop-up to let them know how many attemps they have made to finish this game.
 
 ### Validator Testing 
 __[HTML Validator Testing](https://validator.w3.org/)__
