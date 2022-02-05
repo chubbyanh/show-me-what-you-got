@@ -44,13 +44,13 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
    - Player turns the 2nd card.
      - If these two cards are a pair, then they stay open, and player win points. These points can be automatically exchanged into extra time.
      - If these two cards are not a pair, then they both turn faced down again. 
-   - Player keep doing like that until all the cards are open within the given time frame (and they win!); or until time's up (and they lose!)
+   - Player keep doing like that until all the cards are open within the given time frame (and player wins!); or until time's up (and player loses!)
    - All the attemps will be recorded, so player will know how many attemps they had to try throughout the game.
 
 - __Play against the giant head:__
    - Player turn 1 card to start the game. This card stays open.
    - Player turn the 2nd card.
-      - If these two cards are a pair, then they stay open. It's a win for the player, and he can turn 2 more cards.
+      - If these two cards are a pair, then they stay open. It's a win for the player, and he/she can turn 2 more cards.
       - If these two cards are not a pair, then they both turn faced down, and it's the giant head's turn to play.
    - Player and the giant head take turns to keep doing like that, until all the cards are open. All the wins will be records, so at the end of the game, who has more wins will be the winner.
    - Who starts the game (player or the giant head) is random.
