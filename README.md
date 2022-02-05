@@ -1,17 +1,15 @@
 # Show Me What You Got
 __[View the live project here]()__
 
-    __Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer, and keep track of their scores in order to know how well their memory skills improved. This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
+Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer, and keep track of their scores in order to know how well their memory skills improved. This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
-    This is the second milestone project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
+This is the second milestone project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
    
 ## Table of Contents:
 1. [Game Design](#game-design)
     1. [Prospects](#prospects)
     2. [Game Play](#game-play)
     3. [Game Stories](#game-stories)
-    
-    A giant alien head suddenly appears and threatenes to eliminate the Earth using giant lasers, from an interglatic talent competition unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song, YOU will have to buy some time for them by playing the matching game. 
     4. [Visual Design](#visual-design)
     5. [Scope](#scope)
 2. [Features](#features)
@@ -38,7 +36,8 @@ __[View the live project here]()__
 ### Game Play
 
 ### Game Stories
-
+    A giant alien head suddenly appears and threatenes to eliminate the Earth using giant lasers, from an interglatic talent competition unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song, YOU will have to buy some time for them by playing the matching game.
+    
 ### Visual Design
 
 ### Scope
