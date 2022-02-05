@@ -37,7 +37,9 @@ This is the second milestone project with [Code Institute](https://codeinstitute
 
 ### Game Stories
 
-A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an interglatic talent competition, unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song to save the world, __YOU__ will have to buy some time for them by playing the matching game.
+A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an interglatic talent competition, unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song to save the world, __you__ will have to buy some time for them by playing the matching game.
+
+You can play solo against the countdown timer (under the giant head's supervision, of course!), or play with the giant head itself.
     
 ### Visual Design
 
