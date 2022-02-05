@@ -55,7 +55,7 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
    - Player and the giant head take turns to keep doing like that, until all the cards are open. All the wins will be recorded, so at the end of the game, who has more wins will be the winner.
    - Who starts the game (player or the giant head) is random.
 
-- There are __03 levels__: easy (8 cards), normal (12 cards), and hard (16 cards). At the end of each game, player can choose to stay at the same level or switch to different one.
+- There are __03 levels__: easy (8 cards), normal (12 cards), and hard (16 cards). At the end of each game, player can choose to stay at the same level or switch to a different one.
     
 ### Visual Design
 
