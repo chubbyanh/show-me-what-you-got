@@ -7,11 +7,10 @@ This is the second milestone project with [Code Institute](https://codeinstitute
    
 ## Table of Contents:
 1. [Game Design](#game-design)
-    1. [Prospects](#prospects)
+    1. [Game Stories](#game-stories)
     2. [Game Play](#game-play)
-    3. [Game Stories](#game-stories)
-    4. [Visual Design](#visual-design)
-    5. [Scope](#scope)
+    3. [Visual Design](#visual-design)
+    4. [Scope](#scope)
 2. [Features](#features)
     1. [Existing Features](#existing-features)
     2. [Features Left to Implement](#features-left-to-implement)
@@ -31,15 +30,15 @@ This is the second milestone project with [Code Institute](https://codeinstitute
 10. [Disclaimer](#disclaimer)
 
 ## Game Design
-### Prospects
-
-### Game Play
-
 ### Game Stories
 
 A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an interglatic talent competition, unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song to save the world, __you__ will have to buy some time for them by playing the matching game.
 
 You can play solo against the countdown timer (under the giant head's supervision, of course!), or play with the giant head itself.
+
+### Game Play
+
+
     
 ### Visual Design
 
