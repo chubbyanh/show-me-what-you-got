@@ -42,8 +42,8 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - Play solo against the countdown timer:
    - Player turns 1 card to start the game. This card stays open.
    - Player turns the 2nd card.
-    - If these two cards are a pair, then they stay open, and player win points. These points can be automatically exchanged into extra time.
-    - If these two cards are not a pair, then they both turn faced down again. 
+     - If these two cards are a pair, then they stay open, and player win points. These points can be automatically exchanged into extra time.
+     - If these two cards are not a pair, then they both turn faced down again. 
    - Player keep doing like that until all the cards are open within the given time frame (and they win!); or until time's up (and they lose!)
    - All the attemps will be records, so player will know how many attemps they had to try throughout the game.
 
