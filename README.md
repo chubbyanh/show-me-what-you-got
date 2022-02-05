@@ -35,8 +35,18 @@ This is the second milestone project with [Code Institute](https://codeinstitute
 A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an interglatic talent competition, unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song to save the world, __you__ will have to buy some time for them by playing the matching game.
 
 ### Game Play
-There are __02 play modes__: _play solo against the countdown timer_ (under the giant head's supervision, of course!), or _play against the giant head itself_.
+There are __02 play modes__: play solo against the countdown timer (under the giant head's supervision, of course!), or play against the giant head itself.
+
+At the beginning of the game, all the cards are mixed up and laid in row, face down on the table.
+
 - Play solo against the countdown timer:
+   - Player turns 1 card to start the game. This card stays open.
+   - Player turns the 2nd card.
+    - If these two cards are a pair, then they stay open, and player win points. These points can be automatically exchanged into extra time.
+    - If these two cards are not a pair, then they both turn faced down again. 
+   - Player keep doing like that until all the cards are open within the given time frame (and they win!); or until time's up (and they lose!)
+   - All the attemps will be records, so player will know how many attemps they had to try throughout the game.
+
 - Play against the giant head:
 
     
