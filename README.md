@@ -1,7 +1,7 @@
 # Show Me What You Got
 __[View the live project here]()__
 
-__Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer, and keep track of their scores in order to know how well their memory skills improved. This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
+__Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer. This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
 This is the second milestone project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
    
