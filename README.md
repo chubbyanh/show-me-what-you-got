@@ -53,6 +53,7 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
       - If these two cards are a pair, then they stay open. It's a win for the player, and he can turn 2 more cards.
       - If these two cards are not a pair, then they both turn faced down, and it's the giant head's turn to play.
    - Player and the giant head take turns to keep doing like that, until all the cards are open. All the wins will be records, so at the end of the game, who has more wins will be the winner.
+   - Who starts the game (player or the giant head) is random.
 
 - There are __03 levels__: easy (8 cards), normal (12 cards), and hard (16 cards). At the end of each game, player can choose to stay at the same level or switch to different one.
     
