@@ -93,7 +93,7 @@ __User Stories:__
 - As a player, I want to know if I won or lost.
    - When player finishes a game, there will be a pop-up to let them know if they won or lost. 
 - As a solo player, I want to know how much time I have left to finish the game.
-   - There is a countdown timer on the top of the game area to help player know how much time they have left. 
+   - There is a countdown timer on the top of the game area to help player keep track of how much time they have left. 
 - As a solo player, I want to know how many attemps I have made to finish this game.
    - When player finishes a game, there will be a pop-up to let them know how many attemps they have made to finish this game.
 
