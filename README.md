@@ -97,6 +97,9 @@ __User Stories:__
    - There is a countdown timer on the top of the game area to help player keep track of how much time they have left. 
 - As a solo player, I want to know how many attemps I have made to finish this game.
    - When player finishes a game, there will be a pop-up to let them know how many attemps they have made to finish this game.
+- As a player and a Rick and Morty's fan, I want to enjoy 
+- As a player, I want to report a bug or contact with the developer.
+   - There is a contact form that help player report bug or get in contact easily. 
 
 ### Validator Testing 
 __[HTML Validator Testing](https://validator.w3.org/)__
