@@ -56,7 +56,7 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
    - Player and the giant head take turns to keep doing like that, until all the cards are open. All the wins will be recorded, so at the end of the game, who has more wins will be the winner.
 
 
-- There are __03 levels__: easy (8 cards), normal (12 cards), and hard (16 cards). At the end of each game, player can choose to stay at the same level or switch to a different one.
+- There are __03 levels__: easy (8 cards), normal (12 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level or switch to a different one.
     
 ### Visual Design
 
@@ -162,7 +162,9 @@ __[The live link can be found here]()__
 
 ### Media
 ### Code
-- Memory game tutorials: [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk)
+- This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/). I have adjusted:
+
+Memory game tutorials: [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk)
 
 
 ## Acknowledgements
