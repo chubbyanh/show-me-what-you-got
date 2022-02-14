@@ -4,7 +4,7 @@ var mem = {
   hWrap: null, // html game wrapper
   // (A2) GAME SETTINGS & FLAGS
   url: "assets/images/", // url to images
-  sets: 8, // number of sets to match
+  sets: 10, // number of sets to match
   grid: [], // current game grid
   moves: 0, // total number of moves
   matched: 0, // number of sets that have been matched
