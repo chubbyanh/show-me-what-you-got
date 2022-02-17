@@ -162,7 +162,7 @@ __[The live link can be found here]()__
 
 ### Media
 ### Code
-- This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/). I have adjusted:
+- This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/).
 
 Memory game tutorials: [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk)
 
