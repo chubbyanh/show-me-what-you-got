@@ -1,5 +1,5 @@
 # Show Me What You Got
-__[View the live project here]()__
+__[View the live project here](https://chubbyanh.github.io/show-me-what-you-got/)__
 
 __Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer. This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
