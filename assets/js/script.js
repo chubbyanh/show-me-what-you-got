@@ -1,7 +1,7 @@
 class MemoryGame {
   // (A) PROPERTIES
   // (A1) HTML ELEMENT
-  hWrap = null // html game wrapper
+  hWrap = null; // html game wrapper
   // (A2) GAME SETTINGS & FLAGS
   url = "assets/images/"; // url to images
   sets = 10; // number of sets to match
