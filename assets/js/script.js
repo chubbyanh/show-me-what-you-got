@@ -12,9 +12,7 @@ class MemoryGame {
   lock = null; // timer, lock game controls when showing mismatched cards
   hint = 1000; // how long to show mismatched cards
 
-  // (B) PRELOAD
-  preload(){
-    // (B1) GET HTML GAME WRAPPER
+  constructor (){
     this.hWrap = document.getElementById("game-board");
 
     // (B2) PRELOAD IMAGES
@@ -31,6 +29,7 @@ class MemoryGame {
       img.src = `${this.url}rick-and-morty-${i}.png`;
     }
   }
+  // (B) PRELOAD
 
   // (C) RESET GAME
   reset(){
@@ -131,5 +130,4 @@ class MemoryGame {
   }
 }
 
-const game = new MemoryGame();
-window.addEventListener("DOMContentLoaded", game.preload);
+window.addEventListener("DOMContentLoaded", () => new MemoryGame());
