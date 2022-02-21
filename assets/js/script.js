@@ -1,133 +1,135 @@
-var mem = {
+class MemoryGame {
   // (A) PROPERTIES
   // (A1) HTML ELEMENT
-  hWrap: null, // html game wrapper
+  hWrap = null // html game wrapper
   // (A2) GAME SETTINGS & FLAGS
-  url: "assets/images/", // url to images
-  sets: 10, // number of sets to match
-  grid: [], // current game grid
-  moves: 0, // total number of moves
-  matched: 0, // number of sets that have been matched
-  last: null, // last opened card
-  lock: null, // timer, lock game controls when showing mismatched cards
-  hint: 1000, // how long to show mismatched cards
+  url = "assets/images/"; // url to images
+  sets = 10; // number of sets to match
+  grid = []; // current game grid
+  moves = 0; // total number of moves
+  matched = 0; // number of sets that have been matched
+  last = null; // last opened card
+  lock = null; // timer, lock game controls when showing mismatched cards
+  hint = 1000; // how long to show mismatched cards
 
   // (B) PRELOAD
-  preload: () => {
+  preload(){
     // (B1) GET HTML GAME WRAPPER
-    mem.hWrap = document.getElementById("game-board");
+    this.hWrap = document.getElementById("game-board");
 
     // (B2) PRELOAD IMAGES
     let img,
       loaded = -1;
-    for (let i = 0; i <= mem.sets; i++) {
+    for (let i = 0; i <= this.sets; i++) {
       img = document.createElement("img");
       img.onload = () => {
         loaded++;
-        if (loaded == mem.sets) {
-          mem.reset();
+        if (loaded == this.sets) {
+          this.reset();
         }
       };
-      img.src = `${mem.url}rick-and-morty-${i}.png`;
+      img.src = `${this.url}rick-and-morty-${i}.png`;
     }
-  },
+  }
 
   // (C) RESET GAME
-  reset: () => {
+  reset(){
     // (C1) RESET ALL FLAGS
-    clearTimeout(mem.lock);
-    mem.lock = null;
-    mem.moves = 0;
-    mem.matched = 0;
-    mem.last = null;
-    mem.grid = [];
-    for (let s = 1; s <= mem.sets; s++) {
-      mem.grid.push(s);
-      mem.grid.push(s);
+    clearTimeout(this.lock);
+    this.lock = null;
+    this.moves = 0;
+    this.matched = 0;
+    this.last = null;
+    this.grid = [];
+    for (let s = 1; s <= this.sets; s++) {
+      this.grid.push(s);
+      this.grid.push(s);
     }
 
     // (C2) RANDOM RESHUFFLE CARDS
     // credits : https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/
-    let current = mem.sets * 2,
+    let current = this.sets * 2,
       temp,
       random;
     while (0 !== current) {
       random = Math.floor(Math.random() * current);
       current -= 1;
-      temp = mem.grid[current];
-      mem.grid[current] = mem.grid[random];
-      mem.grid[random] = temp;
+      temp = this.grid[current];
+      this.grid[current] = this.grid[random];
+      this.grid[random] = temp;
     }
-    // console.log(mem.grid); // CHEAT
+    // console.log(this.grid); // CHEAT
 
     // (C3) CREATE HTML CARDS
-    mem.hWrap.innerHTML = "";
-    for (let id in mem.grid) {
+    this.hWrap.innerHTML = "";
+    for (let id in this.grid) {
       let card = document.createElement("img");
       card.className = "game-card";
-      card.src = `${mem.url}rick-and-morty-0.png`;
-      card.onclick = () => { mem.open(card); };
-      card.set = mem.grid[id];
+      card.src = `${this.url}rick-and-morty-0.png`;
+      card.onclick = () => { this.open(card); };
+      card.set = this.grid[id];
       card.open = false;
-      mem.hWrap.appendChild(card);
-      mem.grid[id] = card;
+      this.hWrap.appendChild(card);
+      this.grid[id] = card;
     }
-  },
+  }
 
   // (D) OPEN A CARD
-  open: (card) => {
-    if (mem.lock == null) {
+  open(card){
+    if (this.lock == null) {
       if (!card.open) {
         // (D1) UPDATE FLAGS & HTML
         card.open = true;
-        mem.moves++;
-        card.src = `${mem.url}rick-and-morty-${card.set}.png`;
+        this.moves++;
+        card.src = `${this.url}rick-and-morty-${card.set}.png`;
         card.classList.add("open");
 
         // (D2) FIRST CARD - SET IN LAST
-        if (mem.last == null) {
-          mem.last = card;
+        if (this.last == null) {
+          this.last = card;
         }
 
         // (D3) SECOND CARD - CHECK MATCH
         else {
           // (D3-1) REMOVE CSS CLASS
           card.classList.remove("open");
-          mem.last.classList.remove("open");
+          this.last.classList.remove("open");
 
           // (D3-2) MATCHED
-          if (card.set == mem.last.set) {
+          if (card.set == this.last.set) {
             // UPDATE FLAGS + CSS
-            mem.matched++;
+            this.matched++;
             card.classList.add("right");
-            mem.last.classList.add("right");
-            mem.last = null;
+            this.last.classList.add("right");
+            this.last = null;
 
             // END GAME?
-            if (mem.matched == mem.sets) {
-              alert("YOU WIN! TOTAL MOVES " + mem.moves);
-              mem.reset();
+            if (this.matched == this.sets) {
+              alert("YOU WIN! TOTAL MOVES " + this.moves);
+              this.reset();
             }
           }
 
           // (D3-3) NOT MATCHED - CLOSE BOTH CARDS ONLY AFTER A WHILE
           else {
             card.classList.add("wrong");
-            mem.last.classList.add("wrong");
-            mem.lock = setTimeout(() => {
+            this.last.classList.add("wrong");
+            this.lock = setTimeout(() => {
               card.classList.remove("wrong");
-              mem.last.classList.remove("wrong");
+              this.last.classList.remove("wrong");
               card.open = false;
-              mem.last.open = false;
-              card.src = `${mem.url}rick-and-morty-0.png`;
-              mem.last.src = `${mem.url}rick-and-morty-0.png`;
-              mem.last = null;
-              mem.lock = null;
-            }, mem.hint);
+              this.last.open = false;
+              card.src = `${this.url}rick-and-morty-0.png`;
+              this.last.src = `${this.url}rick-and-morty-0.png`;
+              this.last = null;
+              this.lock = null;
+            }, this.hint);
           }
         }
       }
     }
-  },
-};
-window.addEventListener("DOMContentLoaded", mem.preload);
+  }
+}
+
+const game = new MemoryGame();
+window.addEventListener("DOMContentLoaded", game.preload);
