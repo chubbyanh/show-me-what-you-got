@@ -23,16 +23,25 @@ class MemoryGame {
       img.onload = () => {
         loaded++;
         if (loaded == this.sets) {
-          this.reset();
+          this.newGame();
         }
       };
       img.src = `${this.url}rick-and-morty-${i}.png`;
     }
+
+    const levelBtns = document.getElementsByClassName("level-button");
+    for (let i = 0; i < levelBtns.length; i++)
+      levelBtns[i].onclick = (e) => {
+        let btn = e.target;
+        this.sets = btn.dataset.numSets;
+        this.newGame();
+      };
+
   }
   // (B) PRELOAD
 
   // (C) RESET GAME
-  reset(){
+  newGame(){
     // (C1) RESET ALL FLAGS
     clearTimeout(this.lock);
     this.lock = null;
@@ -105,7 +114,7 @@ class MemoryGame {
             // END GAME?
             if (this.matched == this.sets) {
               alert("YOU WIN! TOTAL MOVES " + this.moves);
-              this.reset();
+              this.newGame();
             }
           }
 
