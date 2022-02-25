@@ -93,8 +93,11 @@ class MemoryGame {
 
   // (D) OPEN A CARD
   open(card){
-    if (this.lock == null) {
-      if (!card.open) {
+    if (this.lock != null)
+      return false;
+    if (card.open)
+      return false;
+
         // (D1) UPDATE FLAGS & HTML
         card.open = true;
         this.moves++;
@@ -141,8 +144,6 @@ class MemoryGame {
               this.last = null;
               this.lock = null;
             }, this.hint);
-          }
-        }
       }
     }
   }
