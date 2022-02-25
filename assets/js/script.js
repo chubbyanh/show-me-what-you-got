@@ -11,6 +11,7 @@ class MemoryGame {
   last = null; // last opened card
   lock = null; // timer, lock game controls when showing mismatched cards
   hint = 1000; // how long to show mismatched cards
+  gameMode = "timed"; // game mode, either timed or versus
 
   constructor (){
     this.hWrap = document.getElementById("game-board");
@@ -39,10 +40,16 @@ class MemoryGame {
         this.newGame();
       };
 
+    const modeBtns = Array.from(document
+      .getElementById("mode-select")
+      .getElementsByTagName("button"));
+    for(let btn of modeBtns)
+      btn.onclick = (e) => {
+        let btn = e.target;
+        this.gameMode = btn.dataset.gameMode;
+      }
   }
-  // (B) PRELOAD
 
-  // (C) RESET GAME
   newGame(){
     // (C1) RESET ALL FLAGS
     clearTimeout(this.lock);
