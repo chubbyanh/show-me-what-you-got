@@ -29,24 +29,14 @@ class MemoryGame {
       img.src = `${this.url}rick-and-morty-${i}.png`;
     }
 
-    document
-      .getElementById("easyLevelSelect")
-      .onclick = () => {
-        this.sets = 4;
+    const levelBtns = document.getElementsByClassName("level-button");
+    for (let i = 0; i < levelBtns.length; i++)
+      levelBtns[i].onclick = (e) => {
+        let btn = e.target;
+        this.sets = btn.dataset.numSets;
         this.newGame();
       };
-    document
-      .getElementById("mediumLevelSelect")
-      .onclick = () => {
-        this.sets = 8;
-        this.newGame();
-      };
-    document
-      .getElementById("hardLevelSelect")
-      .onclick = () => {
-        this.sets = 10;
-        this.newGame();
-      };
+
   }
   // (B) PRELOAD
 
