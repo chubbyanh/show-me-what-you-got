@@ -153,45 +153,45 @@ class MemoryGame {
     // (D2) FIRST CARD - SET IN LAST
     if (this.last == null) {
       this.last = card;
+      return false;
     }
 
     // (D3) SECOND CARD - CHECK MATCH
-    else {
-      // (D3-1) REMOVE CSS CLASS
-      card.classList.remove("open");
-      this.last.classList.remove("open");
 
-      // (D3-2) MATCHED
-      if (card.set == this.last.set) {
-        // UPDATE FLAGS + CSS
-        this.matched++;
-        card.classList.add("right");
-        this.last.classList.add("right");
-        this.last = null;
+    // (D3-1) REMOVE CSS CLASS
+    card.classList.remove("open");
+    this.last.classList.remove("open");
 
-        // END GAME?
-        if (this.matched == this.sets) {
-          alert("YOU WIN! TOTAL MOVES " + this.moves);
-          this.newGame();
-        }
+    // (D3-2) MATCHED
+    if (card.set == this.last.set) {
+      // UPDATE FLAGS + CSS
+      this.matched++;
+      card.classList.add("right");
+      this.last.classList.add("right");
+      this.last = null;
+
+      // END GAME?
+      if (this.matched == this.sets) {
+        alert("YOU WIN! TOTAL MOVES " + this.moves);
+        this.newGame();
       }
-
-      // (D3-3) NOT MATCHED - CLOSE BOTH CARDS ONLY AFTER A WHILE
-      else {
-        card.classList.add("wrong");
-        this.last.classList.add("wrong");
-        this.lock = setTimeout(() => {
-          card.classList.remove("wrong");
-          this.last.classList.remove("wrong");
-          card.open = false;
-          this.last.open = false;
-          card.src = `${this.url}rick-and-morty-0.png`;
-          this.last.src = `${this.url}rick-and-morty-0.png`;
-          this.last = null;
-          this.lock = null;
-        }, this.hint);
-      }
+      return true;
     }
+
+    // (D3-3) NOT MATCHED - CLOSE BOTH CARDS ONLY AFTER A WHILE
+    card.classList.add("wrong");
+    this.last.classList.add("wrong");
+    this.lock = setTimeout(() => {
+      card.classList.remove("wrong");
+      this.last.classList.remove("wrong");
+      card.open = false;
+      this.last.open = false;
+      card.src = `${this.url}rick-and-morty-0.png`;
+      this.last.src = `${this.url}rick-and-morty-0.png`;
+      this.last = null;
+      this.lock = null;
+    }, this.hint);
+    return false;
   }
 }
 
