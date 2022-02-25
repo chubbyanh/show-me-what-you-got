@@ -12,6 +12,7 @@ class MemoryGame {
   lock = null; // timer, lock game controls when showing mismatched cards
   hint = 1000; // how long to show mismatched cards
   gameMode = "timed"; // game mode, either timed or versus
+  memoryLength = 5;
 
   constructor (){
     this.hWrap = document.getElementById("game-board");
@@ -58,6 +59,7 @@ class MemoryGame {
     this.matched = 0;
     this.last = null;
     this.grid = [];
+    this.visible = [];
     for (let s = 1; s <= this.sets; s++) {
       this.grid.push(s);
       this.grid.push(s);
@@ -86,9 +88,52 @@ class MemoryGame {
       card.onclick = () => { this.open(card); };
       card.set = this.grid[id];
       card.open = false;
+      card.seen = -1;
       this.hWrap.appendChild(card);
       this.grid[id] = card;
     }
+
+    this.computerMoveA();
+  }
+
+  computerMoveA(){
+    let card = this.chooseRandomCard();
+    this.open(card);
+    sleep(1000).then(() => this.computerMoveB());
+  }
+
+  computerMoveB() {
+    let secondCard = null;
+
+    const useMemory = (1 - Math.random()) > 0.7;
+    // Decide if the computer will use its memory of the last few cards its seen
+    if (useMemory) {
+      const availableCards = Array
+        .from(this.hWrap.getElementsByClassName("game-card"))
+        .filter(c => c.open == false);
+      for(let card of availableCards){
+        if(card.set == this.last.set){
+          if (card.seen - this.moves < this.memoryLength)
+            secondCard = card;
+          break;
+        }
+      }
+    }
+
+    // Still haven't chosen, so choose random
+    if(secondCard === null) {
+      secondCard = this.chooseRandomCard();
+    }
+    this.open(secondCard);
+
+    sleep(2000).then(() => this.computerMoveA());
+  }
+
+  chooseRandomCard() {
+    const availableCards = Array
+      .from(this.hWrap.getElementsByClassName("game-card"))
+      .filter(c => c.open == false);
+    return availableCards[Math.floor(Math.random() * availableCards.length)];
   }
 
   // (D) OPEN A CARD
@@ -101,6 +146,7 @@ class MemoryGame {
     // (D1) UPDATE FLAGS & HTML
     card.open = true;
     this.moves++;
+    card.seen = this.moves;
     card.src = `${this.url}rick-and-morty-${card.set}.png`;
     card.classList.add("open");
 
@@ -147,6 +193,11 @@ class MemoryGame {
       }
     }
   }
+}
+
+// https://www.sitepoint.com/delay-sleep-pause-wait/
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 window.addEventListener("DOMContentLoaded", () => new MemoryGame());
