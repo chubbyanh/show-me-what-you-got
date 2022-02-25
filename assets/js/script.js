@@ -29,9 +29,11 @@ class MemoryGame {
       img.src = `${this.url}rick-and-morty-${i}.png`;
     }
 
-    const levelBtns = document.getElementsByClassName("level-button");
-    for (let i = 0; i < levelBtns.length; i++)
-      levelBtns[i].onclick = (e) => {
+    const levelBtns = Array.from(document
+      .getElementById("level-select")
+      .getElementsByTagName("button"));
+    for (let btn of levelBtns)
+      btn.onclick = (e) => {
         let btn = e.target;
         this.sets = btn.dataset.numSets;
         this.newGame();
