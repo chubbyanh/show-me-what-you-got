@@ -10,8 +10,11 @@ class MemoryGame {
   matched = 0; // number of sets that have been matched
   last = null; // last opened card
   lock = null; // timer, lock game controls when showing mismatched cards
-  hint = 1000; // how long to show mismatched cards
+  hint = 800; // how long to show mismatched cards
   gameMode = "timed"; // game mode, either timed or versus
+  player = "human";
+  humanScore = 0;
+  computerScore = 0;
   memoryLength = 5;
 
   constructor (){
@@ -85,7 +88,7 @@ class MemoryGame {
       let card = document.createElement("img");
       card.className = "game-card";
       card.src = `${this.url}rick-and-morty-0.png`;
-      card.onclick = () => { this.open(card); };
+      card.onclick = () => { this.open(card, "human"); };
       card.set = this.grid[id];
       card.open = false;
       card.seen = -1;
@@ -93,12 +96,28 @@ class MemoryGame {
       this.grid[id] = card;
     }
 
-    this.computerMoveA();
+    this.humanScore = this.computerScore = 0;
+
+    if (this.gameMode == "versus"){
+      // 50:50 who goes first
+      if(Math.random() > 0.5){
+        this.player = "computer";
+        sleep(1000).then(() => this.computerMoveA());
+      } else {      // 50:50 who goes first
+        if(Math.random() > 0.5){
+          this.player = "computer";
+          sleep(1000).then(() => this.computerMoveA());
+        } else {
+          this.player = "human";
+        }
+      }
+    }
+
   }
 
   computerMoveA(){
     let card = this.chooseRandomCard();
-    this.open(card);
+    this.open(card, "computer");
     sleep(1000).then(() => this.computerMoveB());
   }
 
@@ -124,7 +143,7 @@ class MemoryGame {
     if(secondCard === null) {
       secondCard = this.chooseRandomCard();
     }
-    this.open(secondCard);
+    this.open(secondCard, "computer");
 
     sleep(2000).then(() => this.computerMoveA());
   }
@@ -137,10 +156,13 @@ class MemoryGame {
   }
 
   // (D) OPEN A CARD
-  open(card){
+  open(card, player){
     if (this.lock != null)
       return false;
     if (card.open)
+      return false;
+    // Ignore clicks when player isn't active
+    if (player != this.player)
       return false;
 
     // (D1) UPDATE FLAGS & HTML
@@ -191,6 +213,14 @@ class MemoryGame {
       this.last = null;
       this.lock = null;
     }, this.hint);
+
+    if(this.gameMode == "versus") {
+      // switch active player
+      this.player = this.player == "human" ? "computer" : "human";
+      if(this.player == "computer")
+        sleep(1000).then(() => this.computerMoveA());
+    }
+
     return false;
   }
 }
