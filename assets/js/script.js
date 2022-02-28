@@ -34,9 +34,7 @@ class MemoryGame {
       img.src = `${this.url}rick-and-morty-${i}.png`;
     }
 
-    const levelBtns = Array.from(document
-      .getElementById("level-select")
-      .getElementsByTagName("button"));
+    const levelBtns = document.querySelectorAll('#level-select button');
     for (let btn of levelBtns)
       btn.onclick = (e) => {
         let btn = e.target;
@@ -44,9 +42,7 @@ class MemoryGame {
         this.newGame();
       };
 
-    const modeBtns = Array.from(document
-      .getElementById("mode-select")
-      .getElementsByTagName("button"));
+    const modeBtns = document.querySelectorAll('#mode-select button');
     for(let btn of modeBtns)
       btn.onclick = (e) => {
         let btn = e.target;
