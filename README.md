@@ -176,13 +176,11 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 - Content of this game was written by the developer. However, the game's general rules were taken and adjusted from [memozor.com](https://www.memozor.com/pdf/article/memory_card_game_rules_quick_and_simple.pdf).
 
 ### Media
+
 ### Code
+- This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/).
 
-- This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/). Things I have changed:
-   - 
-
-- Memory game tutorials: [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk)
-
+Things I have changed:
 
 ## Acknowledgements
 
