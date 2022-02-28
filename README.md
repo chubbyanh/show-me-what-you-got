@@ -177,6 +177,7 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 
 ### Media
 ### Code
+
 - This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/). Things I have changed:
    - 
 
