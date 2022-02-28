@@ -167,7 +167,7 @@ To make a local clone of the project follow these steps:
 8. CD into 'show-me-what-you-got'.
 9. Enter 'git clone SSH_ADDRESS'
 10. GitBash will clone the repository into this directory.
-11. Enter 'code .' and this will open VSCODE and happy coding.
+11. Enter 'code .' and this will open VSCode and happy coding.
 
 __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you-got/)__
 
