@@ -1,3 +1,5 @@
+import { sleep } from "./util.js";
+
 // Declare the game objects and properties
 class MemoryGame {
   // (A) PROPERTIES
@@ -219,11 +221,6 @@ class MemoryGame {
 
     return false;
   }
-}
-
-// Credits: https://www.sitepoint.com/delay-sleep-pause-wait/
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /* When page finishes loading, run the game */
