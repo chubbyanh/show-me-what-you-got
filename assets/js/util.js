@@ -3,4 +3,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export {sleep};
+const imagePath = 'assets/images/';
+
+export {sleep, imagePath};
