@@ -1,41 +1,30 @@
 import { sleep } from "./util.js";
 
-// Declare the game objects and properties
 class MemoryGame {
-  // (A) PROPERTIES
-  // (A1) HTML ELEMENT
-  hWrap = null; // html game wrapper
-  // (A2) GAME SETTINGS & FLAGS
-  url = "assets/images/"; // url to images
-  sets = 10; // number of sets to match
-  grid = []; // current game grid
-  moves = 0; // total number of moves
-  matched = 0; // number of sets that have been matched
-  last = null; // last opened card
-  lock = null; // timer, lock game controls when showing mismatched cards
-  hint = 800; // how long to show mismatched cards
-  gameMode = "solo"; // game mode, either solo or combat
-  player = "human";
-  humanScore = 0;
-  computerScore = 0;
-  memoryLength = 5;
 
     // Binding variables and function to buttons
   constructor (){
+    // Declare the game objects and properties
+    this.imagePath = 'assets/images/';
+    this.memoryLength = 6;
+    this.sets = 10; // number of sets to match
+    this.grid = []; // current game grid
+    this.moves = 0; // total number of moves
+    this.matched = 0; // number of sets that have been matched
+    this.last = null; // last opened card
+    this.lock = null; // timer, lock game controls when showing mismatched cards
+    this.hint = 800; // how long to show mismatched cards
+    this.gameMode = "solo"; // game mode, either solo or combat
+    this.player = "human";
+    this.humanScore = 0;
+    this.computerScore = 0;
+
     this.hWrap = document.getElementById("game-board");
 
     // (B2) PRELOAD IMAGES
-    let img,
-      loaded = -1;
     for (let i = 0; i <= this.sets; i++) {
-      img = document.createElement("img");
-      img.onload = () => {
-        loaded++;
-        if (loaded == this.sets) {
-          this.newGame();
-        }
-      };
-      img.src = `${this.url}rick-and-morty-${i}.png`;
+      let img = document.createElement("img");
+      img.src = `${this.imagePath}rick-and-morty-${i}.png`;
     }
 
     // Add a function onclick for the selected level and start the game
@@ -85,11 +74,12 @@ class MemoryGame {
 
     // (C3) CREATE HTML CARDS
     this.hWrap.innerHTML = "";
+    const openFunction = (evt) => this.open(evt.target, "human");
     for (let id in this.grid) {
       let card = document.createElement("img");
       card.className = "game-card";
-      card.src = `${this.url}rick-and-morty-0.png`;
-      card.onclick = () => { this.open(card, "human"); };
+      card.src = `${this.imagePath}rick-and-morty-0.png`;
+      card.onclick = openFunction;
       card.set = this.grid[id];
       card.open = false;
       card.seen = -1;
@@ -167,7 +157,7 @@ class MemoryGame {
     card.open = true;
     this.moves++;
     card.seen = this.moves;
-    card.src = `${this.url}rick-and-morty-${card.set}.png`;
+    card.src = `${this.imagePath}rick-and-morty-${card.set}.png`;
     card.classList.add("open");
 
     // (D2) FIRST CARD - SET IN LAST
@@ -206,8 +196,8 @@ class MemoryGame {
       this.last.classList.remove("wrong");
       card.open = false;
       this.last.open = false;
-      card.src = `${this.url}rick-and-morty-0.png`;
-      this.last.src = `${this.url}rick-and-morty-0.png`;
+      card.src = `${this.imagePath}rick-and-morty-0.png`;
+      this.last.src = `${this.imagePath}rick-and-morty-0.png`;
       this.last = null;
       this.lock = null;
     }, this.hint);
