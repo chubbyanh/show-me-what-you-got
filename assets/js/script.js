@@ -17,19 +17,23 @@ class GameControls {
     // Add a function onclick for the selected level and start the game
     const levelBtns = document.querySelectorAll('#level-select button');
     for (let btn of levelBtns)
-      btn.onclick = (e) => {
-        let btn = e.target;
-        this.sets = btn.dataset.numSets;
-        this.game = new MemoryGame(this.sets, this.gameMode);
-      };
+      btn.onclick = (e) => this.setLevel(e);
 
     // Add a function onclick for the selected mode
     const modeBtns = document.querySelectorAll('#mode-select button');
     for(let btn of modeBtns)
-      btn.onclick = (e) => {
-        let btn = e.target;
-        this.gameMode = btn.dataset.gameMode;
-      };
+      btn.onclick = (e) => this.setMode(e);
+  }
+
+  setLevel(e) {
+    let btn = e.target;
+    this.sets = btn.dataset.numSets;
+    this.game = new MemoryGame(this.sets, this.gameMode);
+  }
+
+  setMode(e) {
+    let btn = e.target;
+    this.gameMode = btn.dataset.gameMode;
   }
 }
 
