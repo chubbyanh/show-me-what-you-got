@@ -1,71 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Show Me What You Got is a memory game with characters from Rick and Morty tv series. You will have to match cards into pairs in order to help save the world from the giant alien head."
-    />
-    <meta
-      name="keywords"
-      content="memory game, matching game, rick and morty card game"
-    />
-    <meta name="author" content="Anh Vu" />
-    <title>Show Me What You Got | Matching Card Game</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <!-- Customized styles for this game -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- JavaScript file -->
-    <script src="assets/js/script.js" type="module"></script>
-    <!-- Font Awesome script -->
-    <script
-      src="https://kit.fontawesome.com/525b56f81e.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Show Me What You Got is a memory game with characters from Rick and Morty tv series. You will have to match cards into pairs in order to help save the world from the giant alien head." />
+  <meta name="keywords" content="memory game, matching game, rick and morty card game" />
+  <meta name="author" content="Anh Vu" />
+  <title>Show Me What You Got | Matching Card Game</title>
 
-  <body>
-    <!-- Main menu -->
-      <section id="main-menu">
-        <h1>
-          <strong>Show Me What You Got<strong>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Customized styles for this game -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- JavaScript file -->
+  <script src="assets/js/script.js" type="module"></script>
+  <!-- Font Awesome script -->
+  <script src="https://kit.fontawesome.com/525b56f81e.js" crossorigin="anonymous"></script>
+</head>
 
-        </h1>
-        <div id="level-select">
-          <button data-num-sets="6">Easy</button>
-          <button data-num-sets="8">Medium</button>
-          <button data-num-sets="10">Hard</button>
-        </div>
-        <div id="mode-select">
-          <button data-game-mode="combat">Combat</button>
-          <button data-game-mode="solo">Solo</button>
-        </div>
-      </section>
-    <!-- /. main menu -->
+<body>
+  <!-- Main menu -->
+  <section id="main-menu">
+    <div>
+      <h2>
+        <strong>Show Me What You Got</strong>
+      </h2>
+    </div>
+    <div>
+      <p>A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an
+        interglatic talent competition, unless the Earth can show them what we got.
+        <br>
+        While Rick and Morty are composing a new catchy song to save the world, <strong>you</strong> will have to buy some time for them
+        by playing a matching game.
+      </p>
+    </div>
+    <div>
+      <button class="btn-play">Play</button>
+      <button id="btn-rules">Rules</button>
+      <button id="btn-contact">Contact</button>
+    </div>
+  </section>
+  <!-- /. main menu -->
+  
+  <!-- Game rules -->
+  <section id="game-rules">
+    <h2>How to play</h2>
+    <p>
+      You need to find identical cards and match them into pairs. Click on a card to turn it over, then click on another one to see if it matches. <br>
+      If the two cards match, they will stay open. If not, they will both close again. <br>
+      Be careful! You need to match them all before time's up, or before the Giant Head does! <br>
+      The Earth's destiny is in your hands!
+    </p>
+    <h2>Game rules</h2>
+    <p>You can choose between <strong>solo</strong> or <strong>combat</strong> mode. <br>
+    <h3>Playing solo</h3>
+    <p>You play against a timer. You need to match all the cards before the clock goes to zero, or the world ends!<br>
+      Any time left at the end of the game will be invaluabe to Rick and Morty in their mission.
+    </p>
+    <h3>Playing combat</h3>
+    <p>You play against the Giant Head. Whoever finds the most matching cards wins.</p>
+    <ul>
+      <li>50:50 chance who goes first</li>
+      <li>If you match a pair, you get to go again</li>
+    </ul>
+    <button class="btn-back">Back</button>
+    <button class="btn-play">Play</button>
+  </section>
+  <!-- /.game rules -->
 
-    <!-- Game arena -->
-    <section>
-      <div id="game-board"></div>
-      <div id="game-info">
-        <section id="combat-info">
+  <!-- Contact -->
+  <section id="contact-area">
+    <h3>Thank you for contacting us!</h3>
+    <p>We will get back to you within 24 hours.</p>
+    <div class="col-md-12">
+      <form class="row g-3" action="https://formdump.codeinstitute.net/" method="post"
+         target="_blank">
+         <div class="col-12">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" name="inputName" class="form-control" id="inputAddress"
+               placeholder="Anh Vu" required>
+         </div>
+         <div class="col-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" name="inputEmail" class="form-control" id="inputEmail"
+               placeholder="anh.v@gmail.com" required>
+         </div>
+         <div class="col-12">
+            <label for="inputMessage" class="form-label">Message</label>
+            <textarea name="inputMessage" class="form-control" id="inputMessage" rows="3"
+               placeholder="Enter your message" required></textarea>
+         </div>
+         <div class="col-12">
+            <button type="submit" class="btn">Submit</button>
+         </div>
+      </form>
+    </div>
+    <button class="btn-back">Back</button>
+  </section>
+  <!-- /.contact -->
 
-          <div id="current-player"></div>
-          <div id="human-score"></div>
-          <div id="computer-score"></div>
-        </section>
-        <section id="solo-info">
-          <div id="game-timer"></div>
-        </section>
+  <!-- Control panel -->
+  <section id="control-panel">
+    <div id="mode-select">
+      <h3>Mode</h3>
+      <button data-game-mode="solo">Solo</button>
+      <button data-game-mode="combat">Combat</button>
+    </div>
+    <div id="level-select">
+      <h3>Level</h3>
+      <button data-num-sets="6">Easy</button>
+      <button data-num-sets="8">Medium</button>
+      <button data-num-sets="10">Hard</button>
+    </div>
+    <div id="start-game">
+      <button>Start</button>
+    </div>
+  </section>
+  <!-- /. control panel -->
+
+  <!-- Game arena -->
+  <section id="game-arena">
+    <button class="btn-back">Surrender</button>
+    <div id="game-board"></div>
+    <div id="game-info">
+      <div id="combat-info">
+        <div id="current-player"></div>
+        <div id="human-score"></div>
+        <div id="computer-score"></div>
       </div>
-    </section>
-    <!-- /. game arena -->
-  </body>
+      <div id="solo-info">
+        <div id="game-timer"></div>
+      </div>
+    </div>
+  </section>
+  <!-- /. game arena -->
+</body>
 </html>
