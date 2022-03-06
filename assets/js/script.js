@@ -28,6 +28,9 @@ class GameControls {
   setLevel(e) {
     let btn = e.target;
     this.sets = btn.dataset.numSets;
+    if(this.game)
+      this.game.clearTimers();
+
     this.game = new MemoryGame(this.sets, this.gameMode);
   }
 

@@ -8,19 +8,20 @@ class MemoryGame {
     this.sets = sets; // number of sets to match
     this.hint = 800; // how long to show mismatched cards
     this.gameMode = mode; // game mode, either solo or combat
-    this.gameTimer = null;
+    this.timer = null;
 
     this.hWrap = document.getElementById("game-board");
     this.computerScoreWrap = document.getElementById("computer-score");
     this.humanScoreWrap = document.getElementById("human-score");
     this.currentPlayerWrap = document.getElementById("current-player");
+    this.timerWrap = document.getElementById("game-timer");
 
     this.newGame();
   }
 
   newGame(){
     // (C1) RESET ALL FLAGS
-    clearTimeout(this.lock);
+    this.clearTimers();
     this.lock = null; // timer, lock game controls when showing mismatched cards
     this.moves = 0; // total number of moves
     this.matched = 0; // number of sets that have been matched
@@ -70,6 +71,10 @@ class MemoryGame {
       } else {
         this.currentPlayer = "human";
       }
+    } else {
+      this.currentPlayer = "human";
+      this.remainingTime = 100;
+      this.timer = setInterval(() => this.countdown(), 1000);
     }
 
   }
@@ -118,7 +123,10 @@ class MemoryGame {
   }
 
   countdown() {
-
+    if (this.remainingTime == 0)
+      this.endGame();
+    else
+      this.remainingTime --;
   }
 
   // (D) OPEN A CARD
@@ -196,17 +204,36 @@ class MemoryGame {
   }
 
   endGame() {
-    alert("YOU WIN! TOTAL MOVES " + this.moves);
-    this.newGame();
+    this.currentPlayer = null;
+    this.clearTimers();
+    if (this.matched != this.sets)
+      alert("you lose");
+    else
+      alert("YOU WIN! TOTAL MOVES " + this.moves);
+  }
+
+  clearTimers() {
+    clearInterval(this.timer);
+    clearTimeout(this.lock);
   }
 
 
   get currentPlayer() { return this.currentPlayerWrap.innerHTML; }
   set currentPlayer(p) { this.currentPlayerWrap.innerHTML = p; }
+
   get humanScore() { return this.humanScoreWrap.innerHTML; }
   set humanScore(s) { this.humanScoreWrap.innerHTML = s; }
+
   get computerScore() { return this.computerScoreWrap.innerHTML; }
   set computerScore(s) { this.computerScoreWrap.innerHTML = s; }
+
+  get remainingTime() {
+    const time = this.timerWrap.innerHTML.split(":");
+    return time[0]*60+parseInt(time[1]);
+  }
+  set remainingTime(t) {
+    this.timerWrap.innerHTML = `${Math.floor(t / 60)}:${(t % 60).toString().padStart(2, "0")}`;
+  }
 }
 
 export { MemoryGame };
