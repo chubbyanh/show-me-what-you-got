@@ -1,3 +1,4 @@
+/* This contains the code for the game arena. */
 import { sleep, imagePath } from "./util.js";
 
 class MemoryGame {
@@ -66,7 +67,8 @@ class MemoryGame {
     // If game mode is combat, who goes first is random 50:50
     if (this.gameMode == "combat"){
       if(Math.random() > 0.5){
-        this.currentPlayer = "computer"; // if computer goes first, pause for 1 second
+        // if computer goes first, pause for 1 second
+        this.currentPlayer = "computer";
         sleep(1000).then(() => this.computerMoveA());
       } else {
         this.currentPlayer = "human";
