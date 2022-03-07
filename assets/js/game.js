@@ -1,4 +1,9 @@
-/* This contains the code for the game arena. */
+// This contains the code for the game arena.
+/* Credits:
+  This game is built on top of the Simple Memory Game in Vanilla JavaScript tutorial by Code Boxx.
+  Please find the original source code here:
+  https://code-boxx.com/simple-memory-game-javascript/
+*/
 import { sleep, imagePath } from "./util.js";
 
 class MemoryGame {
@@ -22,6 +27,8 @@ class MemoryGame {
     this.last = null; // last opened card
     this.grid = []; // current game grid
     this.parent = parent; // reference to objects that created the game
+    this.computerScore = 0; // reset the computer's score
+    this.humanScore = 0; // reset the human's score
 
     /* Create a list of numbers where each number represents a card,
       and the list contains each number twice.
@@ -48,7 +55,7 @@ class MemoryGame {
       where each card has a set variable, using the number from grid
     */
     this.hWrap.innerHTML = "";
-    const openFunction = (evt) => this.open(evt.target, "human");
+    const openFunction = (evt) => this.open(evt.target, "You");
     for (let id in this.grid) {
       let card = document.createElement("img");
       card.className = "game-card";
@@ -68,13 +75,13 @@ class MemoryGame {
     */
     if (this.gameMode == "combat") {
       if (Math.random() > 0.5) {
-        this.currentPlayer = "computer";
+        this.currentPlayer = "Giant Head";
         sleep(1000).then(() => this.computerMoveA());
       } else {
-        this.currentPlayer = "human";
+        this.currentPlayer = "You";
       }
     } else {
-      this.currentPlayer = "human";
+      this.currentPlayer = "You";
       this.remainingTime = 100;
       this.timer = setInterval(() => this.countdown(), 1000);
     }
@@ -88,7 +95,7 @@ class MemoryGame {
   */
   computerMoveA() {
     let firstCard = this.chooseRandomCard();
-    this.open(firstCard, "computer");
+    this.open(firstCard, "Giant Head");
     let secondCard = null;
 
     const useMemory = 1 - Math.random() > 0.7;
@@ -110,7 +117,7 @@ class MemoryGame {
   }
 
   computerMoveB(card) {
-    let matched = this.open(card, "computer");
+    let matched = this.open(card, "Giant Head");
     if (matched) sleep(1000).then(() => this.computerMoveA());
   }
 
@@ -120,56 +127,58 @@ class MemoryGame {
     return availableCards[Math.floor(Math.random() * availableCards.length)]; // pick a random card from all unopened cards
   }
 
+  // Coundown timer for solo mode
   countdown() {
     if (this.remainingTime == 0) this.endGame();
     else this.remainingTime--;
   }
 
-  // (D) OPEN A CARD
+  // Turns a card
   open(card, player) {
     if (this.lock != null) return false;
     if (card.open) return false;
-    // Ignore clicks when player isn't active
-    if (player != this.currentPlayer) return false;
+    if (player != this.currentPlayer) return false; // ignore clicks when player isn't active
 
-    // (D1) UPDATE FLAGS & HTML
     card.open = true;
     this.moves++;
     card.seen = this.moves;
-    card.src = `${imagePath}rick-and-morty-${card.set}.png`;
-    card.classList.add("open");
+    card.src = `${imagePath}rick-and-morty-${card.set}.png`; // updates the image 
+    card.classList.add("open"); // updates CSS styling for the opened card
 
-    // (D2) FIRST CARD - SET IN LAST
+    // Remembering the first card, so that can be compared to the second card
     if (this.last == null) {
       this.last = card;
-      return false;
+      return false; // exit from function on first card
     }
-
-    // (D3) SECOND CARD - CHECK MATCH
-
-    // (D3-1) REMOVE CSS CLASS
+    
+    // Turns the second card. From here, the code only runs on the second card.
+    // Remove CSS
     card.classList.remove("open");
     this.last.classList.remove("open");
 
-    // (D3-2) MATCHED
+    // The second card is matched with the first card
     if (card.set == this.last.set) {
-      // UPDATE FLAGS + CSS
+      // Update flags + CSS
       this.matched++;
       card.classList.add("right");
       this.last.classList.add("right");
       this.last = null;
 
+      // Count scores for combat mode
       if (this.gameMode == "combat") {
-        if (this.currentPlayer == "human") this.humanScore++;
+        if (this.currentPlayer == "You") this.humanScore++;
         else this.computerScore++;
       }
 
-      // END GAME?
+      // When all the cards are opened, game ends
       if (this.matched == this.sets) this.endGame();
-      return true;
+      return true; // exit from function when cards are matched
     }
 
-    // (D3-3) NOT MATCHED - CLOSE BOTH CARDS ONLY AFTER A WHILE
+    /* Check if two cards are matched.
+      If not, close both cards but only after a while.
+      From here, the code only runs if the cards aren't matched.
+    */
     card.classList.add("wrong");
     this.last.classList.add("wrong");
     this.lock = setTimeout(() => {
@@ -180,19 +189,23 @@ class MemoryGame {
       card.src = `${imagePath}rick-and-morty-0.png`;
       this.last.src = `${imagePath}rick-and-morty-0.png`;
       this.last = null;
-      this.lock = null;
+      this.lock = null; // unlock game controls
     }, this.hint);
 
+    /* Switching turns between human and computer */
     if (this.gameMode == "combat") {
-      // Switch active player
-      this.currentPlayer = this.currentPlayer == "human" ? "computer" : "human";
-      if (this.currentPlayer == "computer")
+      this.currentPlayer = this.currentPlayer == "You" ? "Giant Head" : "You";
+      if (this.currentPlayer == "Giant Head") // computer take its turn after 1 sec
         sleep(1000).then(() => this.computerMoveA());
     }
 
     return false;
   }
 
+  /* When game ends, the corresponding message appears
+      to let gamer know if they lose or win,
+      and allow them to return to main menu (quit), or to game control panel (play).
+  */
   endGame() {
     this.currentPlayer = null;
     this.clearTimers();
@@ -219,10 +232,14 @@ class MemoryGame {
     this.parent.goToMessage(section);
   }
 
+  // When game ends, clear the timers
   clearTimers() {
     clearInterval(this.timer);
     clearTimeout(this.lock);
   }
+
+  /* Storing variables in the web page,
+    so that easier to modify in a consistant way */
 
   get currentPlayer() {
     return this.currentPlayerWrap.innerHTML;

@@ -1,6 +1,12 @@
 /* This is main entry point for JavaScripts.
 It contains the control for the game menus. */
 
+/* Credits:
+This game is built on top of the Simple Memory Game in Vanilla JavaScript tutorial by Code Boxx.
+Please find the original source code here:
+https://code-boxx.com/simple-memory-game-javascript/
+*/
+
 import { MemoryGame } from "./game.js";
 import { imagePath } from "./util.js";
 
@@ -45,7 +51,7 @@ class GameControls {
     const modeBtns = document.querySelectorAll(
       "#mode-select button, #level-select button"
     );
-    for (let btn of modeBtns) btn.onclick = (e) => this.selectBtn(e); //this.setMode(e);
+    for (let btn of modeBtns) btn.onclick = (e) => this.selectBtn(e);
 
     // When click on Start button, only Game Arena is visible and the game starts
     document.querySelector("#start-game button").onclick = () => this.newGame();
