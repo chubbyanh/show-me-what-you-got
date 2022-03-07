@@ -13,7 +13,50 @@ body {
 
 .bg-overlay {
   background-color: rgba(219, 68, 55, .9);
+  padding: 1%;
+  border-radius: 10px;
 }
+
+.bg-blue {
+  margin: 1% 2%;
+  padding: 1%;
+}
+h1, h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-family: 'Road Rage', cursive;
+  font-size: 300%;
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 200%;
+  font-size: 120%;
+}
+
+/* credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
+.text-glow {
+
+}
+
+/* Buttons */
+.btn-play {
+  background-color: rgb(15, 157, 88);
+}
+
+.btn-back {
+  background-color: rgb(244, 180, 0);
+  
+}
+
+.btn-blue {
+  background-color: rgb(66, 133, 244);
+}
+
 /*Main menu */
 #bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;
