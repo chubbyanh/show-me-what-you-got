@@ -66,6 +66,20 @@ class GameControls {
     }
   }
 
+  goToMessage(msg) {
+    const msgs = [
+      "solo-win-msg",
+      "solo-lose-msg",
+      "combat-win-msg",
+      "combat-lose-msg",
+    ];
+    document.getElementById(msg).classList.remove("d-none");
+    for (let m of msgs) {
+      if (m != msg) document.getElementById(m).classList.add("d-none");
+    }
+    this.goToSection("messages");
+  }
+
   selectBtn(e) {
     let siblings = e.target.parentNode.querySelectorAll("button");
     for (let btn of siblings)
@@ -81,7 +95,7 @@ class GameControls {
     const gameMode = document.querySelector("#mode-select button.selected")
       .dataset.gameMode;
 
-    this.game = new MemoryGame(sets, gameMode);
+    this.game = new MemoryGame(sets, gameMode, this);
     this.goToSection("game-arena");
   }
 }

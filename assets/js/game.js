@@ -2,7 +2,7 @@
 import { sleep, imagePath } from "./util.js";
 
 class MemoryGame {
-  constructor(sets, mode) {
+  constructor(sets, mode, parent) {
     // Declare the game objects and properties
     this.memoryLength = 6; // number of cards the computer can remember
     this.sets = sets; // number of sets to match
@@ -21,6 +21,7 @@ class MemoryGame {
     this.matched = 0; // number of sets that have been matched
     this.last = null; // last opened card
     this.grid = []; // current game grid
+    this.parent = parent; // reference to objects that created the game
 
     /* Create a list of numbers where each number represents a card,
       and the list contains each number twice.
@@ -87,7 +88,7 @@ class MemoryGame {
   */
   computerMoveA() {
     let firstCard = this.chooseRandomCard();
-
+    this.open(firstCard, "computer");
     let secondCard = null;
 
     const useMemory = 1 - Math.random() > 0.7;
@@ -195,8 +196,27 @@ class MemoryGame {
   endGame() {
     this.currentPlayer = null;
     this.clearTimers();
-    if (this.matched != this.sets) alert("you lose");
-    else alert("YOU WIN! TOTAL MOVES " + this.moves);
+    let section = null;
+    if (this.gameMode == "combat") {
+      if (this.humanScore > this.computerScore) {
+        section = "combat-win-msg";
+      } else {
+        section = "combat-lose-msg";
+      }
+      document.querySelector(`#${section} .count-human-cards`).innerHTML = this.humanScore;
+      document.querySelector(`#${section} .count-computer-cards`).innerHTML = this.computerScore;
+
+    } else {
+      if (this.matched == this.sets) {
+        section = "solo-win-msg";
+        document.querySelector(`#${section} .count-time`).innerHTML = this.remainingTime;
+      } else {
+        section = "solo-lose-msg";
+      }
+      document.querySelector(`#${section} .count-moves`).innerHTML = this.moves;
+    }
+
+    this.parent.goToMessage(section);
   }
 
   clearTimers() {
