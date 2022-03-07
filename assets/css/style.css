@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Special+Elite&display=swap');
 
 * {
   box-sizing: border-box;
 }
- 
+
+body {
+  font-family: 'Special Elite', cursive;
+  font-weight: 300;
+  font-size: 110%;
+  color: whitesmoke;
+}
+
+.bg-overlay {
+  background-color: rgba(219, 68, 55, .9);
+}
 /*Main menu */
 #bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;
