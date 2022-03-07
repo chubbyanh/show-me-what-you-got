@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+ 
 /*Main menu */
-#main-menu {
+#bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;
   height: 100vh;
   background-size: cover;

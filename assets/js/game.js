@@ -2,14 +2,13 @@
 import { sleep, imagePath } from "./util.js";
 
 class MemoryGame {
-
-  constructor (sets, mode){
+  constructor(sets, mode) {
     // Declare the game objects and properties
-    this.memoryLength = 6;
+    this.memoryLength = 6; // number of cards the computer can remember
     this.sets = sets; // number of sets to match
     this.hint = 800; // how long to show mismatched cards
     this.gameMode = mode; // game mode, either solo or combat
-    this.timer = null;
+    this.timer = null; // countdown timer
 
     this.hWrap = document.getElementById("game-board");
     this.computerScoreWrap = document.getElementById("computer-score");
@@ -17,26 +16,21 @@ class MemoryGame {
     this.currentPlayerWrap = document.getElementById("current-player");
     this.timerWrap = document.getElementById("game-timer");
 
-    this.newGame();
-  }
-
-  newGame(){
-    // (C1) RESET ALL FLAGS
-    this.clearTimers();
     this.lock = null; // timer, lock game controls when showing mismatched cards
     this.moves = 0; // total number of moves
     this.matched = 0; // number of sets that have been matched
     this.last = null; // last opened card
     this.grid = []; // current game grid
-    this.humanScore = 0;
-    this.computerScore = 0;
 
+    /* Create a list of numbers where each number represents a card,
+      and the list contains each number twice.
+    */
     for (let s = 1; s <= this.sets; s++) {
       this.grid.push(s);
       this.grid.push(s);
     }
 
-    // (C2) RANDOM RESHUFFLE CARDS
+    // Reshuffle the list of cards randomly
     // Credits: https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/
     let current = this.sets * 2,
       temp,
@@ -49,7 +43,9 @@ class MemoryGame {
       this.grid[random] = temp;
     }
 
-    // (C3) CREATE HTML CARDS
+    /* Create HTML cards,
+      where each card has a set variable, using the number from grid
+    */
     this.hWrap.innerHTML = "";
     const openFunction = (evt) => this.open(evt.target, "human");
     for (let id in this.grid) {
@@ -64,10 +60,13 @@ class MemoryGame {
       this.grid[id] = card;
     }
 
-    // If game mode is combat, who goes first is random 50:50
-    if (this.gameMode == "combat"){
-      if(Math.random() > 0.5){
-        // if computer goes first, pause for 1 second
+    /* Gamer choose game mode: solo or combat.
+      If game mode is combat, who goes first is random 50:50.
+        - If computer goes first, pause for 1 second before turning the first card.
+      If game mode is NOT combat, countdown timer starts.
+    */
+    if (this.gameMode == "combat") {
+      if (Math.random() > 0.5) {
         this.currentPlayer = "computer";
         sleep(1000).then(() => this.computerMoveA());
       } else {
@@ -78,68 +77,59 @@ class MemoryGame {
       this.remainingTime = 100;
       this.timer = setInterval(() => this.countdown(), 1000);
     }
-
   }
-
-  computerMoveA(){
-    let firstCard = this.chooseRandomCard(); // guess a random card that isn't already matched
-    this.open(firstCard, "computer");
+  /* When it's computers turn to play, firstly it will choose a random unopened card.
+    After turning the first card, computer will pause for 1 second, then turn the second card.
+    When turning the second card, computer will decide if use its memory of the last few cards its seen.
+      - 70% chance that computer will use its memory.
+      - If computer uses its memory, it only remembers the last 6 cards.
+    Otherwise, computer will choose the second card randomly from all unopened cards.
+  */
+  computerMoveA() {
+    let firstCard = this.chooseRandomCard();
 
     let secondCard = null;
 
-    // Decide if the computer will use its memory of the last few cards its seen
-    const useMemory = (1 - Math.random()) > 0.7; // 70% chances that computer will use its memory
+    const useMemory = 1 - Math.random() > 0.7;
     if (useMemory) {
-      const availableCards = Array.from(this.hWrap
-          .querySelectorAll(".game-card"))
-        .filter(c => c.open == false);
-      for(let card of availableCards){
-        if(card.set == firstCard.set){
-          // computer only remembers last 6 cards
-          if (this.moves - card.moves < this.memoryLength)
-            secondCard = card;
+      const availableCards = Array.from(
+        this.hWrap.querySelectorAll(".game-card")
+      ).filter((c) => c.open == false);
+      for (let card of availableCards) {
+        if (card.set == firstCard.set) {
+          if (this.moves - card.moves < this.memoryLength) secondCard = card;
           break;
         }
       }
     }
 
-    // Still haven't chosen, so choose random
-    if(secondCard === null)
-      secondCard = this.chooseRandomCard();
+    if (secondCard === null) secondCard = this.chooseRandomCard(); // chooses 2nd card randomly
 
-    // pause for 1 second, then play the second card
-    sleep(1000).then(() => this.computerMoveB(secondCard));
+    sleep(1000).then(() => this.computerMoveB(secondCard)); // pauses for 1 second, then opens the 2nd card
   }
 
   computerMoveB(card) {
     let matched = this.open(card, "computer");
-    if (matched)
-      sleep(1000).then(() => this.computerMoveA());
+    if (matched) sleep(1000).then(() => this.computerMoveA());
   }
 
   chooseRandomCard() {
-    const availableCards = Array.from(this.hWrap
-        .querySelectorAll(".game-card")) // select all the cards
-      .filter(c => c.open == false); // filter for only unopened cards
+    const availableCards = Array.from(this.hWrap.querySelectorAll(".game-card")) // select all the cards
+      .filter((c) => c.open == false); // filter for only unopened cards
     return availableCards[Math.floor(Math.random() * availableCards.length)]; // pick a random card from all unopened cards
   }
 
   countdown() {
-    if (this.remainingTime == 0)
-      this.endGame();
-    else
-      this.remainingTime --;
+    if (this.remainingTime == 0) this.endGame();
+    else this.remainingTime--;
   }
 
   // (D) OPEN A CARD
-  open(card, player){
-    if (this.lock != null)
-      return false;
-    if (card.open)
-      return false;
+  open(card, player) {
+    if (this.lock != null) return false;
+    if (card.open) return false;
     // Ignore clicks when player isn't active
-    if (player != this.currentPlayer)
-      return false;
+    if (player != this.currentPlayer) return false;
 
     // (D1) UPDATE FLAGS & HTML
     card.open = true;
@@ -168,16 +158,13 @@ class MemoryGame {
       this.last.classList.add("right");
       this.last = null;
 
-      if(this.gameMode == "combat"){
-        if(this.currentPlayer == "human")
-          this.humanScore ++;
-        else
-          this.computerScore ++;
+      if (this.gameMode == "combat") {
+        if (this.currentPlayer == "human") this.humanScore++;
+        else this.computerScore++;
       }
 
       // END GAME?
-      if (this.matched == this.sets)
-        this.endGame();
+      if (this.matched == this.sets) this.endGame();
       return true;
     }
 
@@ -195,10 +182,10 @@ class MemoryGame {
       this.lock = null;
     }, this.hint);
 
-    if(this.gameMode == "combat") {
+    if (this.gameMode == "combat") {
       // Switch active player
       this.currentPlayer = this.currentPlayer == "human" ? "computer" : "human";
-      if(this.currentPlayer == "computer")
+      if (this.currentPlayer == "computer")
         sleep(1000).then(() => this.computerMoveA());
     }
 
@@ -208,10 +195,8 @@ class MemoryGame {
   endGame() {
     this.currentPlayer = null;
     this.clearTimers();
-    if (this.matched != this.sets)
-      alert("you lose");
-    else
-      alert("YOU WIN! TOTAL MOVES " + this.moves);
+    if (this.matched != this.sets) alert("you lose");
+    else alert("YOU WIN! TOTAL MOVES " + this.moves);
   }
 
   clearTimers() {
@@ -219,22 +204,35 @@ class MemoryGame {
     clearTimeout(this.lock);
   }
 
+  get currentPlayer() {
+    return this.currentPlayerWrap.innerHTML;
+  }
+  set currentPlayer(p) {
+    this.currentPlayerWrap.innerHTML = p;
+  }
 
-  get currentPlayer() { return this.currentPlayerWrap.innerHTML; }
-  set currentPlayer(p) { this.currentPlayerWrap.innerHTML = p; }
+  get humanScore() {
+    return this.humanScoreWrap.innerHTML;
+  }
+  set humanScore(s) {
+    this.humanScoreWrap.innerHTML = s;
+  }
 
-  get humanScore() { return this.humanScoreWrap.innerHTML; }
-  set humanScore(s) { this.humanScoreWrap.innerHTML = s; }
-
-  get computerScore() { return this.computerScoreWrap.innerHTML; }
-  set computerScore(s) { this.computerScoreWrap.innerHTML = s; }
+  get computerScore() {
+    return this.computerScoreWrap.innerHTML;
+  }
+  set computerScore(s) {
+    this.computerScoreWrap.innerHTML = s;
+  }
 
   get remainingTime() {
     const time = this.timerWrap.innerHTML.split(":");
-    return time[0]*60+parseInt(time[1]);
+    return time[0] * 60 + parseInt(time[1]);
   }
   set remainingTime(t) {
-    this.timerWrap.innerHTML = `${Math.floor(t / 60)}:${(t % 60).toString().padStart(2, "0")}`;
+    this.timerWrap.innerHTML = `${Math.floor(t / 60)}:${(t % 60)
+      .toString()
+      .padStart(2, "0")}`;
   }
 }
 
