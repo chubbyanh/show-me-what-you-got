@@ -29,7 +29,7 @@ class GameControls {
     document.querySelector("#btn-contact").onclick = () =>
       this.goToSection("contact-area");
 
-    // When click on Back/ Surrender button, only Main Menu is visible
+    // When click on Back/ Surrender/ Quit button, only Main Menu is visible
     const backBtns = document.querySelectorAll(".btn-back");
     for (let btn of backBtns)
       btn.onclick = () => {
@@ -58,6 +58,7 @@ class GameControls {
       "game-arena",
       "game-rules",
       "contact-area",
+      "messages",
     ];
     document.getElementById(section).classList.remove("d-none");
     for (let s of sections) {
