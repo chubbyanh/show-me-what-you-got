@@ -81,10 +81,14 @@ class MemoryGame {
       } else {
         this.currentPlayer = "You";
       }
+      document.getElementById("solo-info").classList.add("d-none");
+      document.getElementById("combat-info").classList.remove("d-none");
     } else {
       this.currentPlayer = "You";
       this.remainingTime = 100;
       this.timer = setInterval(() => this.countdown(), 1000);
+      document.getElementById("combat-info").classList.add("d-none");
+      document.getElementById("solo-info").classList.remove("d-none");
     }
   }
   /* When it's computers turn to play, firstly it will choose a random unopened card.
