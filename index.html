@@ -24,7 +24,7 @@
   <section id="main-menu">
     <div class="bg-overlay">
       <div>
-        <h1 class="text-glow">
+        <h1>
           <strong>Show Me What You Got</strong>
         </h1>
       </div>
@@ -38,9 +38,11 @@
           by playing a matching game.
         </p>
       </div>
-      <div><button class="btn-play">Play</button></div>
-      <div><button class="btn-blue" id="btn-rules">Rules</button></div>
-      <div><button class="btn-blue" id="btn-contact">Contact</button></div>
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-block btn-glowing btn-play">Play</button>
+        <button type="button" class="btn btn-block btn-blue" id="btn-rules">Rules</button>
+        <button type="button" class="btn btn-block btn-blue" id="btn-contact">Contact</button>
+      </div>
     </div>
   </section>
   <!-- /. main menu -->
@@ -77,9 +79,9 @@
         </ul>
       </div>
       <hr>
-      <div>
-        <button class="btn-back">Back</button>
-        <button class="btn-play">Play</button>
+      <div class="btn-group-vertical">
+        <button type="button" class="btn btn-play btn-glowing">Play</button>
+        <button type="button" class="btn btn-back">Back</button>
       </div>
     </div>
   </section>
@@ -106,12 +108,12 @@
             <textarea name="inputMessage" class="form-control" id="inputMessage" rows="3"
               placeholder="Enter your message" required></textarea>
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn" id="btn-submit">Submit</button>
+          <div class="col-12 btn-group-vertical">
+            <button type="submit" class="btn btn-glowing" id="btn-submit">Submit</button>
+            <button type="button" class="btn btn-back">Back</button>            
           </div>
         </form>
-      </div>
-      <button class="btn-back">Back</button>
+      </div> 
     </div>
   </section>
   <!-- /.contact -->
@@ -121,17 +123,23 @@
     <div class="bg-overlay">
       <div id="mode-select">
         <h3>Mode</h3>
-        <button class="selected" data-game-mode="solo">Solo</button>
-        <button data-game-mode="combat">Combat</button>
+        <div class="btn-group-vertical">
+        <button type="button" class="btn selected" data-game-mode="solo">Solo</button>
+        <button type="button" class="btn" data-game-mode="combat">Combat</button>
       </div>
+      </div>
+      <hr>
       <div id="level-select">
         <h3>Level</h3>
-        <button class="selected" data-num-sets="6">Easy</button>
-        <button data-num-sets="8">Medium</button>
-        <button data-num-sets="10">Hard</button>
+        <div class="btn-group-vertical">
+        <button type="button" class="btn selected" data-num-sets="6">Easy</button>
+        <button type="button" class="btn" data-num-sets="8">Medium</button>
+        <button type="button" class="btn" data-num-sets="10">Hard</button>
+        </div>
       </div>
+      <hr>
       <div id="start-game">
-        <button class="btn-play">Start</button>
+        <button type="button" class="btn btn-play btn-glowing" id="btn-start">Start</button>
       </div>
     </div>
   </section>
@@ -140,7 +148,7 @@
   <!-- Game arena -->
   <section id="game-arena">
     <div class="bg-overlay">
-      <button class="btn-back">Surrender</button>
+      <button type="button" class="btn btn-back">Surrender</button>
       <div id="game-info">
         <div id="combat-info">
           <div>Turn: <span id="current-player"></span></div>
@@ -148,7 +156,7 @@
           <div>Giant Head's score: <span id="computer-score"></span></div>
         </div>
         <div id="solo-info">
-          <div id="game-timer"></div>
+          <div>Time Left: <span id="game-timer"></span></div>
         </div>
       </div>
       <div id="game-board"></div>

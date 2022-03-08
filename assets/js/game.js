@@ -68,7 +68,8 @@ class MemoryGame {
       this.grid[id] = card;
     }
 
-    /* Gamer choose game mode: solo or combat.
+    /* By default, game mode is solo.
+      Gamer can change this by click on the buttons to choose between solo or combat.
       If game mode is combat, who goes first is random 50:50.
         - If computer goes first, pause for 1 second before turning the first card.
       If game mode is NOT combat, countdown timer starts.
@@ -80,10 +81,14 @@ class MemoryGame {
       } else {
         this.currentPlayer = "You";
       }
+      document.getElementById("solo-info").classList.add("d-none");
+      document.getElementById("combat-info").classList.remove("d-none");
     } else {
       this.currentPlayer = "You";
       this.remainingTime = 100;
       this.timer = setInterval(() => this.countdown(), 1000);
+      document.getElementById("combat-info").classList.add("d-none");
+      document.getElementById("solo-info").classList.remove("d-none");
     }
   }
   /* When it's computers turn to play, firstly it will choose a random unopened card.

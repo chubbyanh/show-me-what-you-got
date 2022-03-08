@@ -24,6 +24,7 @@ body {
   margin: 1% 2%;
   padding: 1%;
 }
+
 h1, h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -41,30 +42,53 @@ h1 {
   font-size: 120%;
 }
 
-/* credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
-.text-glow {
-
-}
-
 /* Buttons */
-button {
+.btn {
   margin: 5px;
+}
+.btn-group-vertical {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
 }
 
 .btn-play,
+.selected,
 #btn-submit {
   background-color: rgb(15, 157, 88);
 }
 
 .btn-back {
   background-color: rgb(244, 180, 0);
-  
 }
 
 .btn-blue {
   background-color: rgb(66, 133, 244);
 }
 
+/* Glowing buttons
+  Credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
+@keyframes glowing {
+  0% {
+    background-color: rgb(15, 157, 88);
+    box-shadow: 0 0 5px rgb(15, 157, 88);
+  }
+  50% {
+    background-color: rgb(20, 157, 15);
+    box-shadow: 0 0 20px rgb(20, 157, 15);
+  }
+  100% {
+    background-color: rgb(15, 157, 88);
+    box-shadow: 0 0 5px rgb(15, 157, 88);
+  }
+}
+
+.btn-glowing {
+  -webkit-animation: glowing 1300ms infinite;
+}
+
+/* Messages when game ends */
 .img-msg {
   height: 30px;
 }
@@ -74,6 +98,7 @@ button {
   width: fit-content;
   margin: auto;
 }
+
 /*Main menu */
 #bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;

@@ -46,8 +46,10 @@ class GameControls {
         this.goToSection("main-menu");
       };
 
-    // Select play mode: solo or combat
-    // Select game level: easy (12 cards), medium (16 cards), or hard (20 cards)
+    /*By default, game mode is solo, game level is combat. Gamer can change this by click on buttons.
+      Select play mode: solo or combat
+      Select game level: easy (12 cards), medium (16 cards), or hard (20 cards)  
+    */
     const modeBtns = document.querySelectorAll(
       "#mode-select button, #level-select button"
     );
