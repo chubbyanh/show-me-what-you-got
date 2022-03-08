@@ -13,9 +13,7 @@ import { imagePath } from "./util.js";
 class GameControls {
   // Binding variables and function to buttons
   constructor() {
-    // When the game is first loaded, only the Main Menu is visible
-    this.goToSection("main-menu");
-    
+
     // Preload all images before starting the game
     for (let i = 0; i <= this.sets; i++) {
       let img = document.createElement("img");
@@ -48,7 +46,7 @@ class GameControls {
 
     /*By default, game mode is solo, game level is combat. Gamer can change this by click on buttons.
       Select play mode: solo or combat
-      Select game level: easy (12 cards), medium (16 cards), or hard (20 cards)  
+      Select game level: easy (12 cards), medium (16 cards), or hard (20 cards)
     */
     const modeBtns = document.querySelectorAll(
       "#mode-select button, #level-select button"
@@ -57,6 +55,9 @@ class GameControls {
 
     // When click on Start button, only Game Arena is visible and the game starts
     document.querySelector("#start-game button").onclick = () => this.newGame();
+
+    // When the game is first loaded, only the Main Menu is visible
+    this.goToSection("main-menu");
   }
 
   goToSection(section) {
@@ -109,4 +110,4 @@ class GameControls {
 }
 
 // When page finishes loading, run the game
-window.addEventListener("DOMContentLoaded", () => new GameControls());
+window.addEventListener("load", () => new GameControls());
