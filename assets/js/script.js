@@ -13,14 +13,14 @@ import { imagePath } from "./util.js";
 class GameControls {
   // Binding variables and function to buttons
   constructor() {
+    // When the game is first loaded, only the Main Menu is visible
+    this.goToSection("main-menu");
+    
     // Preload all images before starting the game
     for (let i = 0; i <= this.sets; i++) {
       let img = document.createElement("img");
       img.src = `${imagePath}rick-and-morty-${i}.png`;
     }
-
-    // When the game is first loaded, only the Main Menu is visible
-    this.goToSection("main-menu");
 
     // When click on Play button, only Control Panel is visible
     const playBtns = document.querySelectorAll(".btn-play");
