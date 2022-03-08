@@ -42,21 +42,17 @@ h1 {
   font-size: 120%;
 }
 
-
-.text-glow {
-
-}
-
 /* Buttons */
-button {
+.btn {
   margin: 5px;
 }
 .btn-group-vertical {
   display: flex;
-  width: 60%;
+  width: 50%;
   margin: auto;
   justify-content: center;
 }
+
 .btn-play,
 .selected,
 #btn-submit {
@@ -65,14 +61,13 @@ button {
 
 .btn-back {
   background-color: rgb(244, 180, 0);
-  
 }
 
 .btn-blue {
   background-color: rgb(66, 133, 244);
 }
 
-/* Glowing button
+/* Glowing buttons
   Credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
 @keyframes glowing {
   0% {
@@ -89,10 +84,11 @@ button {
   }
 }
 
-#btn-start {
+.btn-glowing {
   -webkit-animation: glowing 1300ms infinite;
 }
 
+/* Messages when game ends */
 .img-msg {
   height: 30px;
 }
@@ -102,6 +98,7 @@ button {
   width: fit-content;
   margin: auto;
 }
+
 /*Main menu */
 #bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;
