@@ -103,14 +103,14 @@ class MemoryGame {
     this.open(firstCard, "Giant Head");
     let secondCard = null;
 
-    const useMemory = 1 - Math.random() > 0.7;
+    const useMemory = Math.random() <= 0.7;
     if (useMemory) {
       const availableCards = Array.from(
         this.hWrap.querySelectorAll(".game-card")
       ).filter((c) => c.open == false);
       for (let card of availableCards) {
         if (card.set == firstCard.set) {
-          if (this.moves - card.moves < this.memoryLength) secondCard = card;
+          if (card.seen > 0 && this.moves - card.seen < this.memoryLength) secondCard = card;
           break;
         }
       }
@@ -123,7 +123,7 @@ class MemoryGame {
 
   computerMoveB(card) {
     let matched = this.open(card, "Giant Head");
-    if (matched) sleep(1000).then(() => this.computerMoveA());
+    if (matched && this.matched != this.sets) sleep(1000).then(() => this.computerMoveA());
   }
 
   chooseRandomCard() {
@@ -147,7 +147,7 @@ class MemoryGame {
     card.open = true;
     this.moves++;
     card.seen = this.moves;
-    card.src = `${imagePath}rick-and-morty-${card.set}.png`; // updates the image 
+    card.src = `${imagePath}rick-and-morty-${card.set}.png`; // updates the image
     card.classList.add("open"); // updates CSS styling for the opened card
 
     // Remembering the first card, so that can be compared to the second card
@@ -155,7 +155,7 @@ class MemoryGame {
       this.last = card;
       return false; // exit from function on first card
     }
-    
+
     // Turns the second card. From here, the code only runs on the second card.
     // Remove CSS
     card.classList.remove("open");
