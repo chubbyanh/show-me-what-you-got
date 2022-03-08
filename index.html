@@ -66,7 +66,7 @@
       <h2>Game rules</h2>
       <p>You can choose between <span class="text-bold"><strong>solo</strong></span> or <span
           class="text-bold"><strong>combat</strong></span> mode. <br>
-      <div class="bg-blue">
+      <div id="rules-detail">
         <h3>Playing solo</h3>
         <p>You play against a timer. You need to match all the cards before the clock goes to zero.<br>
           Any time left at the end of the game will be invaluabe to Rick and Morty in their mission.
@@ -120,26 +120,26 @@
 
   <!-- Control panel -->
   <section class="d-none" id="control-panel">
-    <div class="bg-overlay">
-      <div id="mode-select">
-        <h3>Mode</h3>
+    <div class="bg-overlay row">
+      <div class="col-12" id="mode-select">
+        <h3 class="text-center">Mode</h3>
         <div class="btn-group-vertical">
-          <button type="button" class="btn selected" data-game-mode="solo">Solo</button>
-          <button type="button" class="btn" data-game-mode="combat">Combat</button>
+          <button type="button" class="btn btn-block selected" data-game-mode="solo">Solo</button>
+          <button type="button" class="btn btn-block" data-game-mode="combat">Combat</button>
         </div>
       </div>
       <hr>
-      <div id="level-select">
-        <h3>Level</h3>
+      <div class="col-12" id="level-select">
+        <h3 class="text-center">Level</h3>
         <div class="btn-group-vertical">
-          <button type="button" class="btn selected" data-num-sets="6">Easy</button>
-          <button type="button" class="btn" data-num-sets="8">Medium</button>
-          <button type="button" class="btn" data-num-sets="10">Hard</button>
+          <button type="button" class="btn btn-block selected" data-num-sets="6">Easy</button>
+          <button type="button" class="btn btn-block" data-num-sets="8">Medium</button>
+          <button type="button" class="btn btn-block" data-num-sets="10">Hard</button>
         </div>
       </div>
       <hr>
-      <div id="start-game">
-        <button type="button" class="btn btn-play btn-glowing" id="btn-start">Start</button>
+      <div class="col-12 btn-group-vertical" id="start-game">
+        <button type="button" class="btn btn-block btn-play btn-glowing" id="btn-start">Start</button>
       </div>
     </div>
   </section>
@@ -236,4 +236,5 @@
   </section>
   <!-- /.messages when game ends -->
 </body>
+
 </html>

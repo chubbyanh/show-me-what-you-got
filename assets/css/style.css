@@ -5,7 +5,15 @@
   box-sizing: border-box;
 }
 
-body {
+#bg-img {
+  background: url(../images/giant-head-bg.png) center center no-repeat;
+  height: 100vh;
+  background-size: cover;
+  -webkit-background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   font-family: 'Special Elite', cursive;
   font-weight: 300;
   font-size: 110%;
@@ -19,11 +27,6 @@ body {
   width: 80%;
   max-height: 80%;
   margin: auto;
-}
-
-.bg-blue {
-  margin: 1% 2%;
-  padding: 1%;
 }
 
 .text-bold {
@@ -60,21 +63,26 @@ h1 {
   }
 }
 
-/* creates colors of glowing effect on text 
+/* creates colors of glowing effect on text
 credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
 */
 @-webkit-keyframes text-glow {
   from{
-    text-shadow: 0 0 10px whitesmoke,0 0 20px whitesmoke,0 0 30px #e60073,0 0 40px #e60073,0 0 50px #e60073,0 0 60px #e60073,0 0 70px #e60073;
+    text-shadow: 0 0 10px whitesmoke,0 0 20px whitesmoke,
+    0 0 30px #e60073,0 0 40px #e60073,0 0 50px #e60073,
+    0 0 60px #e60073,0 0 70px #e60073;
   }
   to{
-    text-shadow: 0 0 20px whitesmoke,0 0 30px #ff4da6,0 0 40px #ff4da6,0 0 50px #ff4da6,0 0 60px #ff4da6,0 0 70px #ff4da6,0 0 80px #ff4da6;
+    text-shadow: 0 0 20px whitesmoke,0 0 30px #ff4da6,
+    0 0 40px #ff4da6,0 0 50px #ff4da6,0 0 60px #ff4da6,
+    0 0 70px #ff4da6,0 0 80px #ff4da6;
   }
 }
 
 /* ------ BUTTONS ------ */
 .btn {
   margin: 5px;
+  border: solid 2px whitesmoke;
 }
 .btn-group-vertical {
   display: flex;
@@ -123,24 +131,26 @@ credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
 }
 
 /* ------ MAIN MENU ------ */
-#bg-img {
-  background: url(../images/giant-head-bg.png) center center no-repeat;
-  height: 100vh;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+
+
+/* ------ GAME RULES ------ */
+#rules-detail {
+  margin: 1% 2%;
+  padding: 1%;
+}
+
+/* ------ CONTROL PANEL ------ */
+#mode-select,
+#level-select,
+#start-game {
+  padding-bottom: 2%;
 }
 
 /* ------ GAME ARENA ------ */
 #game-board {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 10px;
+  gap: 5px;
   max-width: 420px;
   margin: 0 auto;
 }
