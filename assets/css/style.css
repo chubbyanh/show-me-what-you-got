@@ -24,6 +24,7 @@ body {
   margin: 1% 2%;
   padding: 1%;
 }
+
 h1, h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -41,7 +42,7 @@ h1 {
   font-size: 120%;
 }
 
-/* credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
+
 .text-glow {
 
 }
@@ -50,8 +51,14 @@ h1 {
 button {
   margin: 5px;
 }
-
+.btn-group-vertical {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+}
 .btn-play,
+.selected,
 #btn-submit {
   background-color: rgb(15, 157, 88);
 }
@@ -63,6 +70,27 @@ button {
 
 .btn-blue {
   background-color: rgb(66, 133, 244);
+}
+
+/* Glowing button
+  Credits: https://www.w3docs.com/snippets/css/how-to-create-flashing-glowing-button-using-animation-in-css3.html */
+@keyframes glowing {
+  0% {
+    background-color: rgb(15, 157, 88);
+    box-shadow: 0 0 5px rgb(15, 157, 88);
+  }
+  50% {
+    background-color: rgb(20, 157, 15);
+    box-shadow: 0 0 20px rgb(20, 157, 15);
+  }
+  100% {
+    background-color: rgb(15, 157, 88);
+    box-shadow: 0 0 5px rgb(15, 157, 88);
+  }
+}
+
+#btn-start {
+  -webkit-animation: glowing 1300ms infinite;
 }
 
 .img-msg {

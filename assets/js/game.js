@@ -68,7 +68,8 @@ class MemoryGame {
       this.grid[id] = card;
     }
 
-    /* Gamer choose game mode: solo or combat.
+    /* By default, game mode is solo.
+      Gamer can change this by click on the buttons to choose between solo or combat.
       If game mode is combat, who goes first is random 50:50.
         - If computer goes first, pause for 1 second before turning the first card.
       If game mode is NOT combat, countdown timer starts.
