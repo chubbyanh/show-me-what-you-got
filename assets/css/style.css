@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Special+Elite&display=swap');
 
+/* ------ GENERAL STYLING ------ */
 * {
   box-sizing: border-box;
 }
@@ -25,6 +26,12 @@ body {
   padding: 1%;
 }
 
+.text-bold {
+  font-weight: 200%;
+  font-size: 120%;
+}
+
+/* ------ HEADINGS ------ */
 h1, h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -35,14 +42,35 @@ h1 {
   font-family: 'Road Rage', cursive;
   font-size: 300%;
   text-align: center;
+  /* animates zoom effect on loading page */
+  animation-name: text-zoom;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  /* glowing effect */
+  animation: text-glow 1s ease-in-out infinite;
 }
 
-.text-bold {
-  font-weight: 200%;
-  font-size: 120%;
+/* creates level of zoom for text-zoom */
+@keyframes text-zoom {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+  }
 }
 
-/* Buttons */
+/* creates colors of glowing effect on text */
+@-webkit-keyframes text-glow {
+  from{
+    text-shadow: 0 0 10px whitesmoke,0 0 20px whitesmoke,0 0 30px #e60073,0 0 40px #e60073,0 0 50px #e60073,0 0 60px #e60073,0 0 70px #e60073;
+  }
+  to{
+    text-shadow: 0 0 20px whitesmoke,0 0 30px #ff4da6,0 0 40px #ff4da6,0 0 50px #ff4da6,0 0 60px #ff4da6,0 0 70px #ff4da6,0 0 80px #ff4da6;
+  }
+}
+
+/* ------ BUTTONS ------ */
 .btn {
   margin: 5px;
 }
@@ -91,18 +119,8 @@ h1 {
 #btn-contact-group {
   padding-top: 1%;
 }
-/* Messages when game ends */
-.img-msg {
-  height: 30px;
-}
 
-#messages {
-  text-align: center;
-  width: fit-content;
-  margin: auto;
-}
-
-/*Main menu */
+/* ------ MAIN MENU ------ */
 #bg-img {
   background: url(../images/giant-head-bg.png) center center no-repeat;
   height: 100vh;
@@ -115,7 +133,8 @@ h1 {
   justify-content: center;
   position: relative;
 }
-/* Game board */
+
+/* ------ GAME ARENA ------ */
 #game-board {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -130,7 +149,18 @@ h1 {
   background: #e5e5e5;
 }
 
-/* Contact area */
+/* ------ MESSAGES WHEN GAME ENDS ------ */
+.img-msg {
+  height: 30px;
+}
+
+#messages {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+
+/* ------ CONTACT AREA ------ */
 #contact-area {
   text-align: center;
 }
