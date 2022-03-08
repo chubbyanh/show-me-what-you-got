@@ -106,14 +106,14 @@
           <div class="col-12">
             <label for="inputMessage" class="form-label">Message</label>
             <textarea name="inputMessage" class="form-control" id="inputMessage" rows="3"
-              placeholder="Enter your message" required></textarea>
+              placeholder="Please enter your message here" required></textarea>
           </div>
-          <div class="col-12 btn-group-vertical">
+          <div class="col-12 btn-group-vertical" id="btn-contact-group">
             <button type="submit" class="btn btn-glowing" id="btn-submit">Submit</button>
-            <button type="button" class="btn btn-back">Back</button>            
+            <button type="button" class="btn btn-back">Back</button>
           </div>
         </form>
-      </div> 
+      </div>
     </div>
   </section>
   <!-- /.contact -->
@@ -124,17 +124,17 @@
       <div id="mode-select">
         <h3>Mode</h3>
         <div class="btn-group-vertical">
-        <button type="button" class="btn selected" data-game-mode="solo">Solo</button>
-        <button type="button" class="btn" data-game-mode="combat">Combat</button>
-      </div>
+          <button type="button" class="btn selected" data-game-mode="solo">Solo</button>
+          <button type="button" class="btn" data-game-mode="combat">Combat</button>
+        </div>
       </div>
       <hr>
       <div id="level-select">
         <h3>Level</h3>
         <div class="btn-group-vertical">
-        <button type="button" class="btn selected" data-num-sets="6">Easy</button>
-        <button type="button" class="btn" data-num-sets="8">Medium</button>
-        <button type="button" class="btn" data-num-sets="10">Hard</button>
+          <button type="button" class="btn selected" data-num-sets="6">Easy</button>
+          <button type="button" class="btn" data-num-sets="8">Medium</button>
+          <button type="button" class="btn" data-num-sets="10">Hard</button>
         </div>
       </div>
       <hr>
@@ -173,12 +173,15 @@
       </h3>
       <hr>
       <p>
-        Well done! You've earned <span class="count-time"></span> seconds for us, with total <span class="count-moves"></span> moves! <br>
+        Well done! You've earned <span class="count-time"></span> seconds for us, with total <span
+          class="count-moves"></span> moves! <br>
         Now, go back to play again. We need more time!
       </p>
       <hr>
-      <button class="btn-back">Quit</button>
-      <button class="btn-play">Play</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-back">Quit</button>
+        <button type="button" class="btn btn-play">Play</button>
+      </div>
     </div>
     <div class="bg-overlay" id="solo-lose-msg">
       <h3>
@@ -191,8 +194,10 @@
         Now, go back to play again. We need more time!
       </p>
       <hr>
-      <button class="btn-back">Quit</button>
-      <button class="btn-play">Play</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-back">Quit</button>
+        <button type="button" class="btn btn-play">Play</button>
+      </div>
     </div>
     <div class="bg-overlay" id="combat-win-msg">
       <h3>
@@ -201,25 +206,32 @@
       </h3>
       <hr>
       <p>
-        Well done! You found <span class="count-human-cards"></span> cards, the Giant Head found <span class="count-computer-cards"></span> cards. <br>
+        Well done! You found <span class="count-human-cards"></span> cards, the Giant Head found <span
+          class="count-computer-cards"></span> cards. <br>
         Now, go back to play again. We need more time!
       </p>
       <hr>
-      <button class="btn-back">Quit</button>
-      <button class="btn-play">Play</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-back">Quit</button>
+        <button type="button" class="btn btn-play">Play</button>
+      </div>
     </div>
     <div class="bg-overlay" id="combat-lose-msg">
       <h3>
         <span><img src="assets/images/rick-and-morty-7.png" alt="ricks-head" class="img-msg"></span>
-        You Lose !</h3>
+        You Lose !
+      </h3>
       <hr>
       <p>
-        Dumb ass! You found <span class="count-human-cards"></span> cards, the Giant Head found <span class="count-computer-cards"></span> cards. <br>
+        Dumb ass! You found <span class="count-human-cards"></span> cards, the Giant Head found <span
+          class="count-computer-cards"></span> cards. <br>
         Now, go back to play again. We need more time!
       </p>
       <hr>
-      <button class="btn-back">Quit</button>
-      <button class="btn-play">Play</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-back">Quit</button>
+        <button type="button" class="btn btn-play">Play</button>
+      </div>
     </div>
   </section>
   <!-- /.messages when game ends -->

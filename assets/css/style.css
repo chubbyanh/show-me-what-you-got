@@ -88,6 +88,9 @@ h1 {
   -webkit-animation: glowing 1300ms infinite;
 }
 
+#btn-contact-group {
+  padding-top: 1%;
+}
 /* Messages when game ends */
 .img-msg {
   height: 30px;
