@@ -151,11 +151,15 @@ credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 5px;
-  max-width: 420px;
+  justify-content: center;
+  perspective: 500px;
   margin: 0 auto;
 }
 
 .game-card {
+  display: flex;
+  position: relative;
+  max-width: 100%;
   padding: 10px;
   cursor: pointer;
   background: #e5e5e5;

@@ -15,7 +15,7 @@ class GameControls {
   constructor() {
 
     // Preload all images before starting the game
-    for (let i = 0; i <= this.sets; i++) {
+    for (let i = 0; i <= 10; i++) {
       let img = document.createElement("img");
       img.src = `${imagePath}rick-and-morty-${i}.png`;
     }
