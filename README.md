@@ -2,11 +2,11 @@
 __[View the live project here](https://chubbyanh.github.io/show-me-what-you-got/)__
 
 ![Responsiveness](assets/readme-images/responsiveness.png)
-[Responsiveness](http://ami.responsivedesign.is/)
+[ami.responsivedesign.is](http://ami.responsivedesign.is/)
 
 __Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer (a.k.a. the giant alien head). This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
-This is the second milestone project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
+This is the second porfolio project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
 
 ## Table of Contents:
 1. [Game Design](#game-design)
@@ -14,15 +14,13 @@ This is the second milestone project with [Code Institute](https://codeinstitute
     2. [Game Stories](#game-stories)
     2. [Game Play](#game-play)
     3. [Visual Design](#visual-design)
-    4. [Scope](#scope)
 2. [Features](#features)
     1. [Existing Features](#existing-features)
     2. [Features Left to Implement](#features-left-to-implement)
 3. [Technologies Used](#technologies-used)
 4. [Testing](#testing)
-    1. [UX Stories Testing](#ux-stories-testing)
-    2. [Validator Testing](#validator-testing )
-    3. [Unfixed Bugs](#unfixed-bugs)
+    1. [Validator Testing](#validator-testing )
+    2. [Unfixed Bugs](#unfixed-bugs)
 5. [Deployment](#deployment)
     1. [GitHub Pages](#github-pages)
     2. [Forking Repository](#forking-the-github-repository)
@@ -70,25 +68,80 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - There are __03 levels__: easy (12 cards), normal (16 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level/mode, or switch to a different one.
 
 ### Visual Design
-
-### Scope
+__User stories__
+- As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
+   - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 
 ## Features
 
 ### Existing Features
-#### Main Menu
+#### __Main Menu__
 ![Main Menu](assets/readme-images/main-menu.png)
-#### Rules
+
+__User stories__
+- As a player, I want to know the game's background story.
+   - Background story appears right under the game's title.
+
+- As a player, I want to navigate with ease throughout the game.
+   - There are three buttons on main menu to help user navigate to other sections of the game.
+
+#### __Rules__
 ![Rules](assets/readme-images/rules.png)
-#### Contact
+
+__User stories__
+- As a player, I want to know about this game's rules.
+   - Player can learn quickly about the game's rules by clicking on the Rules button.
+
+#### __Contact__
 ![Contact](assets/readme-images/contact.png)
-#### Control Panel
+
+__User stories__
+- As a player, I want to report a bug or contact with the developer.
+   - There is a contact form that help player report bug or get in contact easily.
+
+#### __Control Panel__
 ![Control Panel](assets/readme-images/control-panel.png)
-#### Game Arena
+
+__User stories__
+- As a player, I want to choose the level of difficulties and the play mode before starting the game.
+   - When player clicks on the Play button, there will be a Control Panel to help them choose the level and mode that they want to play at.
+
+- As a player, I want to switch to another level of difficulties and/or another play mode.
+   - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch.
+
+#### __Game Arena__
 ![Game Arena](assets/readme-images/game-arena.png)
-#### Messages When Game Ends
+
+__User stories__
+- As a player, I want to quit the game at any time.
+   - There is a Surrender button below the game arena to help player quit at any time.
+
+- As a __solo__ player, I want to know how much time I have left to finish the game.
+   - There is a countdown timer on the top of the game arena to help player keep track of how much time they have left.
+
+- As a __combat__ player, I want to know whose turn it is, and current scores between me and the giant head.
+   - There are information about turn, gamer's score, giant head's score on the top of the game arena.
+
+#### __Messages When Game Ends__
 ![Messages](assets/readme-images/messages.png)
+
+__User stories__
+- As a player, I want to know if I won or lost.
+   - When player finishes a game, there will be a Message to let them know if they won or lost.
+
+- As a __solo__ player, I want to know how many attemps I have made to finish this game.
+   - When player finishes a game, there will be a Message to let them know how many attemps they have made to finish this game.
+
+- As a __solo__ player, I want to know how much time I have contributed to the world saving mission!
+   - When player wins a game, there will be a Message to let them know how much unused time they still have, and that will be the amount of time they contribute to the world saving mission as well.
+
+- As a __combat__ player, I want to know how many cards I have found, compared to the giant head's.
+  - When player finishes a game, there will be a Message to let them know how many cards they have found, compared to the giant head's.
+
 ### Features Left to Implement
+#### __Sound Effect__
+- As a player, I want to turn on/ turn off the sound as I wish.
+   - The sound is off on default. Player can turn the sound on by clicking on the Sound button.
 
 ## Technologies Used
 - HTML5, CSS3, [Bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
@@ -101,37 +154,7 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - [W3.CSS Color Generator](https://www.w3schools.com/w3css/w3css_color_generator.asp) to generate color themes
 
 ## Testing
-### Manual Testing
-__User Stories:__
-- As a player, I want to know about this game's rules.
-   - Player can learn quickly about the game's rules by clicking on the Game Rules button.
-- As a player, I want to turn on/ turn off the sound as I wish.
-   - The sound is off on default. Player can turn the sound on by clicking on the Sound button.
-- As a player, I want to choose the level of difficulties and the play mode before starting the game.
-   - When player clicks on the Play button, there will be a pop-up to help them choose the level and mode that they want to play at.
-- As a player, I want to switch to another level of difficulties and/or another play mode.
-   - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch.
-- As a player, I want to quit the game at any time.
-   - There is a Quit button on top of the game area to help player quit at any time.
-- As a player, I want to know if I won or lost.
-   - When player finishes a game, there will be a pop-up to let them know if they won or lost.
-- As a __solo__ player, I want to know how much time I have left to finish the game.
-   - There is a countdown timer on the top of the game area to help player keep track of how much time they have left.
-- As a __solo__ player, I want to know how many attemps I have made to finish this game.
-   - When player finishes a game, there will be a pop-up to let them know how many attemps they have made to finish this game.
-- As a __solo__ player, I want to know how much time I have contributed to the world saving mission!
-   - When player wins a game, there will be a pop-up to let them know how much unused time they still have, and that will be the amount of time they contribute to the world saving mission as well.
-- As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
-   - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
-- As a player, I want to report a bug or contact with the developer.
-   - There is a contact form that help player report bug or get in contact easily.
-
 ### Validator Testing
-__[HTML Validator Testing](https://validator.w3.org/)__
-
-__[CSS Validator Testing](https://jigsaw.w3.org/css-validator/)__
-
-__[JavaScript Validator Testing](https://jshint.com/)__
 
 __[Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)__
 
@@ -174,7 +197,7 @@ To make a local clone of the project follow these steps:
 1. Log into your GitHub account.
 2. Navigate to the [Repository](https://github.com/chubbyanh/show-me-what-you-got).
 3. In the upper section of the repository click the dropdown named 'Code'.
-4. Copy the SHH address.
+4. Copy the SSH address.
 5. Open GitBash
 6. Navigate to the correct directory.
 7. Create a new directory named 'show-me-what-you-got'.
