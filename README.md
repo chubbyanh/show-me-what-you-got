@@ -53,17 +53,17 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
    - Player turns the 2nd card.
      - If these two cards are a pair, then they stay open.
      - If these two cards are not a pair, then they both turn faced down again.
-   - Player keep doing like that until all the cards are open within the given time frame (and player wins!); or until time's up (and player loses!)
-   - All the attemps will be recorded, so player will know how many attemps they had to try throughout the game.
+   - Player keeps going like that until all the cards are open within the given time frame (and player wins!); or until time's up (and player loses!)
+   - All the attempts will be recorded, so player will know how many attempts they had to try throughout the game.
    - If player wins, they will also know how much unused time they have. That will be the time they contribute to the world saving mission!
 
 - __Play against the giant head:__
-   - Who starts the game (player or the giant head) is random.
-   - If player is chosen to start the game, then: player turn the 1st card, this card stays open.
-   - Player turn the 2nd card.
-      - If these two cards are a pair, then they stay open. It's a win for the player, and he/she can turn 2 more cards.
+   - Who makes the first move of the game (player or the giant head) is random.
+   - If player is chosen to start the game, then: player turns the 1st card, this card stays open.
+   - Player turns the 2nd card.
+      - If these two cards are a pair, then they stay open. It's a match for the player, and he/she can turn 2 more cards.
       - If these two cards are not a pair, then they both turn faced down, and it's the giant head's turn to play.
-   - Player and the giant head take turns to keep doing like that, until all the cards are open. All the wins will be recorded, so at the end of the game, who has more wins will be the winner.
+   - Player and the giant head keep taking turns like that, until all the cards are open. All the matches will be recorded, so at the end of the game, who has most matches will be the winner.
 
 
 - There are __03 levels__: easy (12 cards), normal (16 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level/mode, or switch to a different one.
@@ -118,16 +118,16 @@ User stories:
 
 User stories:
 - As a player, I want to report a bug or contact with the developer.
-   - There is a contact form that help player report bug or get in contact easily.
+   - There is a contact form that help player report a bug or get in contact easily.
 
 #### __Control Panel__
 ![Control Panel](assets/readme-images/control-panel.png)
 
 User stories:
-- As a player, I want to choose the level of difficulties and the play mode before starting the game.
+- As a player, I want to choose the level of difficulty and the play mode before starting the game.
    - When player clicks on the Play button, there will be a Control Panel to help them choose the level and mode that they want to play at.
 
-- As a player, I want to switch to another level of difficulties and/or another play mode.
+- As a player, I want to switch to another level of difficulty and/or another play mode.
    - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch.
 
 #### __Game Arena__
@@ -141,7 +141,7 @@ User stories:
    - There is a countdown timer on the top of the game arena to help player keep track of how much time they have left.
 
 - As a __combat__ player, I want to know whose turn it is, and current scores between me and the giant head.
-   - There are information about turn, gamer's score, giant head's score on the top of the game arena.
+   - There is information about the turn, player's score, giant head's score on the top of the game arena.
 
 #### __Messages When Game Ends__
 ![Messages](assets/readme-images/messages.png)
@@ -150,8 +150,8 @@ User stories:
 - As a player, I want to know if I won or lost.
    - When player finishes a game, there will be a Message to let them know if they won or lost.
 
-- As a __solo__ player, I want to know how many attemps I have made to finish this game.
-   - When player finishes a game, there will be a Message to let them know how many attemps they have made to finish this game.
+- As a __solo__ player, I want to know how many attempts I have made to finish this game.
+   - When player finishes a game, there will be a Message to let them know how many attempts they have made to finish this game.
 
 - As a __solo__ player, I want to know how much time I have contributed to the world saving mission!
    - When player wins a game, there will be a Message to let them know how much unused time they still have, and that will be the amount of time they contribute to the world saving mission as well.
@@ -240,6 +240,9 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 - Other invaluable tutorial sources: [W3 School](https://www.w3schools.com/), [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk), [MDN](https://developer.mozilla.org/en-US/docs/Web/javascript), [getbootstrap.com](https://getbootstrap.com/docs/5.1/getting-started/introduction/), [Code Institute](https://codeinstitute.net/ie/), [Stackoverflow](https://stackoverflow.com/).
 
 ## Acknowledgements
+- I would like to thank my mentor, Guido Cecilio, for his support throughout my project, especially his invaluable feedback during code review sessions.
+- I also would like to thank my classmates (msletb-nov-2021 cohort) at Code Institute and Kasia Bogucka, our corhort's facilitator, for their continuing support.
+- I would like to thank my husband for being a (temporary) fulltime stay-at-home father so that I could concentrate on my study and get this project done on time. Of course, I would like to thank his employer's generosity on paternity leave as well!
 
 ## Disclaimer
 This game was created for educational purposes only.
