@@ -6,7 +6,7 @@
 }
 
 #bg-img {
-  background: url(../images/giant-head-bg.png) center center no-repeat;
+  background: url(../images/giant-head-bg.png) no-repeat center center fixed;
   height: 100vh;
   background-size: cover;
   -webkit-background-size: cover;
