@@ -187,3 +187,7 @@ credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
     overflow-y: scroll;
   }
 }
+
+.leader {
+  animation: text-glow 1s ease-in-out infinite;
+}
