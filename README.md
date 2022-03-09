@@ -74,6 +74,9 @@ User stories:
    - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 
 ## Features
+__Wireframe__
+
+![Wireframe](assets/readme-images/wireframe.png)
 
 ### Existing Features
 #### __Main Menu__
@@ -157,7 +160,7 @@ User stories:
 
 ## Testing
 ### Validator Testing
-
+jshint and w3c web validator extensions were integrated into VS Code, so that my code could be checked in realtime. As far as I know, the code passed these validator tests.
 
 ### Unfixed Bugs
 
