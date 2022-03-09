@@ -69,21 +69,26 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - There are __03 levels__: easy (12 cards), normal (16 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level/mode, or switch to a different one.
 
 ### Visual Design
+__Images__
+
 User stories:
 - As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
    - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 
 __Theme colors__
 
-There are 5 main colors used in this game:
-
-- #f5f5f5
+There are 5 main colors used in this game, because I wanted to make the game look fun and cartoonish.
+- rgb(245,245,245)
 - rgb(15, 157, 88)
 - rgb(244, 180, 0)
 - rgb(66, 133, 244)
 - rgba(219, 68, 55, .9)
 
 __Fonts__
+
+Font 'Special Elite' was used for the whole game. Font 'Road Rage' was used for the game's title.
+
+Because the game's backstory is about an interglatic talent competition, so I wanted to make the game's title glow and look like an electric sign.
 
 ## Features
 __Wireframe__
@@ -95,8 +100,8 @@ __Wireframe__
 ![Main Menu](assets/readme-images/main-menu.png)
 
 User stories:
-- As a player, I want to know the game's background story.
-   - Background story appears right under the game's title.
+- As a player, I want to know the game's backstory.
+   - Backstory appears right under the game's title.
 
 - As a player, I want to navigate with ease throughout the game.
    - There are three buttons on main menu to help user navigate to other sections of the game.
@@ -228,9 +233,11 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 - Content of this game was written by the developer. However, the game's general rules were taken and adjusted from [memozor.com](https://www.memozor.com/pdf/article/memory_card_game_rules_quick_and_simple.pdf).
 
 ### Media
+- All images taken from [freepnglogos](https://www.freepnglogos.com/search.php?q=rick+and+morty): free licence for personal use.
 
 ### Code
 - This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/).
+-
 
 ## Acknowledgements
 
