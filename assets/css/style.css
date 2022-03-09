@@ -136,6 +136,11 @@ credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
   padding: 1%;
 }
 
+.scroll-content {
+  height: 90vh;
+  overflow: scroll;
+}
+
 /* ------ CONTROL PANEL ------ */
 #mode-select,
 #level-select,
