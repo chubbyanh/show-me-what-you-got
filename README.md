@@ -73,6 +73,18 @@ User stories:
 - As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
    - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 
+__Theme colors__
+
+There are 5 main colors used in this game:
+
+- #f5f5f5
+- rgb(15, 157, 88)
+- rgb(244, 180, 0)
+- rgb(66, 133, 244)
+- rgba(219, 68, 55, .9)
+
+__Fonts__
+
 ## Features
 __Wireframe__
 
@@ -163,6 +175,7 @@ User stories:
 jshint and w3c web validator extensions were integrated into VS Code, so that my code could be checked in realtime. As far as I know, the code passed these validator tests.
 
 ### Unfixed Bugs
+- There is no known unfixed bugs.
 
 ## Deployment
 ### GitHub Pages
