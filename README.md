@@ -1,10 +1,13 @@
 # Show Me What You Got
 __[View the live project here](https://chubbyanh.github.io/show-me-what-you-got/)__
 
+![Responsiveness](assets/readme-images/responsiveness.png)
+[Responsiveness](http://ami.responsivedesign.is/)
+
 __Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer (a.k.a. the giant alien head). This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
 This is the second milestone project with [Code Institute](https://codeinstitute.net/ie/). The main purpose of this project is to design an interactive Front-End web application using HTML, CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
-   
+
 ## Table of Contents:
 1. [Game Design](#game-design)
     1. [Target Users](#target-users)
@@ -50,13 +53,13 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
    - Player turns 1 card to start the game. This card stays open.
    - Player turns the 2nd card.
      - If these two cards are a pair, then they stay open.
-     - If these two cards are not a pair, then they both turn faced down again. 
+     - If these two cards are not a pair, then they both turn faced down again.
    - Player keep doing like that until all the cards are open within the given time frame (and player wins!); or until time's up (and player loses!)
    - All the attemps will be recorded, so player will know how many attemps they had to try throughout the game.
    - If player wins, they will also know how much unused time they have. That will be the time they contribute to the world saving mission!
 
 - __Play against the giant head:__
-   - Who starts the game (player or the giant head) is random. 
+   - Who starts the game (player or the giant head) is random.
    - If player is chosen to start the game, then: player turn the 1st card, this card stays open.
    - Player turn the 2nd card.
       - If these two cards are a pair, then they stay open. It's a win for the player, and he/she can turn 2 more cards.
@@ -65,15 +68,26 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 
 
 - There are __03 levels__: easy (12 cards), normal (16 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level/mode, or switch to a different one.
-    
+
 ### Visual Design
 
 ### Scope
 
 ## Features
-  
-### Existing Features
 
+### Existing Features
+#### Main Menu
+![Main Menu](assets/readme-images/main-menu.png)
+#### Rules
+![Rules](assets/readme-images/rules.png)
+#### Contact
+![Contact](assets/readme-images/contact.png)
+#### Control Panel
+![Control Panel](assets/readme-images/control-panel.png)
+#### Game Arena
+![Game Arena](assets/readme-images/game-arena.png)
+#### Messages When Game Ends
+![Messages](assets/readme-images/messages.png)
 ### Features Left to Implement
 
 ## Technologies Used
@@ -86,23 +100,23 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - [TinyPNG](https://tinypng.com/), [Canva](https://www.canva.com/), [GIMP](https://www.gimp.org/) for optimizing and editing images
 - [W3.CSS Color Generator](https://www.w3schools.com/w3css/w3css_color_generator.asp) to generate color themes
 
-## Testing 
+## Testing
 ### Manual Testing
 __User Stories:__
 - As a player, I want to know about this game's rules.
-   - Player can learn quickly about the game's rules by clicking on the Game Rules button. 
+   - Player can learn quickly about the game's rules by clicking on the Game Rules button.
 - As a player, I want to turn on/ turn off the sound as I wish.
-   - The sound is off on default. Player can turn the sound on by clicking on the Sound button. 
+   - The sound is off on default. Player can turn the sound on by clicking on the Sound button.
 - As a player, I want to choose the level of difficulties and the play mode before starting the game.
-   - When player clicks on the Play button, there will be a pop-up to help them choose the level and mode that they want to play at. 
+   - When player clicks on the Play button, there will be a pop-up to help them choose the level and mode that they want to play at.
 - As a player, I want to switch to another level of difficulties and/or another play mode.
-   - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch. 
+   - When player finishes a game, there will be a pop-up to help them choose if they want to keep playing at the same level and mode, or switch.
 - As a player, I want to quit the game at any time.
-   - There is a Quit button on top of the game area to help player quit at any time. 
+   - There is a Quit button on top of the game area to help player quit at any time.
 - As a player, I want to know if I won or lost.
-   - When player finishes a game, there will be a pop-up to let them know if they won or lost. 
+   - When player finishes a game, there will be a pop-up to let them know if they won or lost.
 - As a __solo__ player, I want to know how much time I have left to finish the game.
-   - There is a countdown timer on the top of the game area to help player keep track of how much time they have left. 
+   - There is a countdown timer on the top of the game area to help player keep track of how much time they have left.
 - As a __solo__ player, I want to know how many attemps I have made to finish this game.
    - When player finishes a game, there will be a pop-up to let them know how many attemps they have made to finish this game.
 - As a __solo__ player, I want to know how much time I have contributed to the world saving mission!
@@ -110,9 +124,9 @@ __User Stories:__
 - As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
    - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 - As a player, I want to report a bug or contact with the developer.
-   - There is a contact form that help player report bug or get in contact easily. 
+   - There is a contact form that help player report bug or get in contact easily.
 
-### Validator Testing 
+### Validator Testing
 __[HTML Validator Testing](https://validator.w3.org/)__
 
 __[CSS Validator Testing](https://jigsaw.w3.org/css-validator/)__
