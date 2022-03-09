@@ -74,7 +74,7 @@ class MemoryGame {
         - If computer goes first, pause for 1 second before turning the first card.
       If game mode is NOT combat, countdown timer starts.
     */
-    if (this.gameMode == "combat") {
+    if (this.gameMode === "combat") {
       if (Math.random() > 0.5) {
         this.currentPlayer = "Giant Head";
         sleep(1000).then(() => this.computerMoveA());
