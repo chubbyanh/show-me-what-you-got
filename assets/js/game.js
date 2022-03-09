@@ -15,7 +15,7 @@ class MemoryGame {
     this.gameMode = mode; // game mode, either solo or combat
     this.timer = null; // countdown timer
 
-    this.hWrap = document.getElementById("game-board");
+    this.gameBoard = document.getElementById("game-board");
     this.computerScoreWrap = document.getElementById("computer-score");
     this.humanScoreWrap = document.getElementById("human-score");
     this.currentPlayerWrap = document.getElementById("current-player");
@@ -54,7 +54,7 @@ class MemoryGame {
     /* Create HTML cards,
       where each card has a set variable, using the number from grid
     */
-    this.hWrap.innerHTML = "";
+    this.gameBoard.innerHTML = "";
     const openFunction = (evt) => this.open(evt.target, "You");
     for (let id in this.grid) {
       let card = document.createElement("img");
@@ -64,7 +64,7 @@ class MemoryGame {
       card.set = this.grid[id];
       card.open = false;
       card.seen = -1;
-      this.hWrap.appendChild(card);
+      this.gameBoard.appendChild(card);
       this.grid[id] = card;
     }
 
@@ -106,7 +106,7 @@ class MemoryGame {
     const useMemory = Math.random() <= 0.7;
     if (useMemory) {
       const availableCards = Array.from(
-        this.hWrap.querySelectorAll(".game-card")
+        this.gameBoard.querySelectorAll(".game-card")
       ).filter((c) => c.open == false);
       for (let card of availableCards) {
         if (card.set == firstCard.set) {
@@ -127,7 +127,7 @@ class MemoryGame {
   }
 
   chooseRandomCard() {
-    const availableCards = Array.from(this.hWrap.querySelectorAll(".game-card")) // select all the cards
+    const availableCards = Array.from(this.gameBoard.querySelectorAll(".game-card")) // select all the cards
       .filter((c) => c.open == false); // filter for only unopened cards
     return availableCards[Math.floor(Math.random() * availableCards.length)]; // pick a random card from all unopened cards
   }
@@ -243,6 +243,18 @@ class MemoryGame {
     clearTimeout(this.lock);
   }
 
+  highlightLeader() {
+    const cWrap = this.computerScoreWrap.parentNode;
+    const hWrap = this.humanScoreWrap.parentNode;
+    cWrap.classList.remove("leader");
+    hWrap.classList.remove("leader");
+
+    if(this.computerScore > this.humanScore)
+      cWrap.classList.add("leader");
+    else if(this.computerScore < this.humanScore)
+      hWrap.classList.add("leader");
+  }
+
   /* Storing variables in the web page,
     so that easier to modify in a consistant way */
 
@@ -258,6 +270,7 @@ class MemoryGame {
   }
   set humanScore(s) {
     this.humanScoreWrap.innerHTML = s;
+    this.highlightLeader();
   }
 
   get computerScore() {
@@ -265,6 +278,7 @@ class MemoryGame {
   }
   set computerScore(s) {
     this.computerScoreWrap.innerHTML = s;
+    this.highlightLeader();
   }
 
   get remainingTime() {
