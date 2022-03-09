@@ -34,12 +34,12 @@ This is the second porfolio project with [Code Institute](https://codeinstitute.
 
 ## Game Design
 ### Target Users
-This is a hobby project with the main purpose is to show my study results in JavaScript module with Code Institute. So that I don't have a business strategy here. My target users could be:
+This is a hobby project with the main purpose is to show my study results in JavaScript module with Code Institute. Therefore I don't have a business strategy here. My target users could be:
 - People who want to play simple games on the go
 - People who want to improve their memory skills by playing games
 - People who are fans of Rick and Morty tv series and want to play some fun games with related characters and stories
 
-### Game Stories
+### Game Story
 
 A giant alien head suddenly appears and threatens to eliminate the Earth using giant lasers, from an interglatic talent competition, unless the Earth can show them what we got. While Rick and Morty are composing a new catchy song to save the world, __you__ will have to buy some time for them by playing a matching game.
 
@@ -237,7 +237,7 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 
 ### Code
 - This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/).
--
+- Other invaluable tutorial sources: [W3 School](https://www.w3schools.com/), [Code Sketch](https://www.youtube.com/watch?v=eMhiMsEC9Uk), [MDN](https://developer.mozilla.org/en-US/docs/Web/javascript), [getbootstrap.com](https://getbootstrap.com/docs/5.1/getting-started/introduction/), [Code Institute](https://codeinstitute.net/ie/), [Stackoverflow](https://stackoverflow.com/).
 
 ## Acknowledgements
 
