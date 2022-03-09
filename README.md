@@ -11,7 +11,7 @@ This is the second porfolio project with [Code Institute](https://codeinstitute.
 ## Table of Contents:
 1. [Game Design](#game-design)
     1. [Target Users](#target-users)
-    2. [Game Stories](#game-stories)
+    2. [Game Story](#game-story)
     2. [Game Play](#game-play)
     3. [Visual Design](#visual-design)
 2. [Features](#features)
