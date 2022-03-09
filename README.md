@@ -28,6 +28,7 @@ This is the second porfolio project with [Code Institute](https://codeinstitute.
 8. [Credits](#credits)
     1. [Content](#content)
     2. [Media](#media)
+    3. [Code](#code)
 9. [Acknowledgements](#acknowledgements)
 10. [Disclaimer](#disclaimer)
 
@@ -68,7 +69,7 @@ At the beginning of the game, all the cards are mixed up and laid in row, face d
 - There are __03 levels__: easy (12 cards), normal (16 cards), and hard (20 cards). At the end of each game, player can choose to stay at the same level/mode, or switch to a different one.
 
 ### Visual Design
-__User stories__
+User stories:
 - As a player and a Rick and Morty's fan, I want to see my beloved characters and stories in the game.
    - Background images, stories, and characters in the game are borrowed from Rick and Morty tv series.
 
@@ -78,7 +79,7 @@ __User stories__
 #### __Main Menu__
 ![Main Menu](assets/readme-images/main-menu.png)
 
-__User stories__
+User stories:
 - As a player, I want to know the game's background story.
    - Background story appears right under the game's title.
 
@@ -88,21 +89,21 @@ __User stories__
 #### __Rules__
 ![Rules](assets/readme-images/rules.png)
 
-__User stories__
+User stories:
 - As a player, I want to know about this game's rules.
    - Player can learn quickly about the game's rules by clicking on the Rules button.
 
 #### __Contact__
 ![Contact](assets/readme-images/contact.png)
 
-__User stories__
+User stories:
 - As a player, I want to report a bug or contact with the developer.
    - There is a contact form that help player report bug or get in contact easily.
 
 #### __Control Panel__
 ![Control Panel](assets/readme-images/control-panel.png)
 
-__User stories__
+User stories:
 - As a player, I want to choose the level of difficulties and the play mode before starting the game.
    - When player clicks on the Play button, there will be a Control Panel to help them choose the level and mode that they want to play at.
 
@@ -112,7 +113,7 @@ __User stories__
 #### __Game Arena__
 ![Game Arena](assets/readme-images/game-arena.png)
 
-__User stories__
+User stories:
 - As a player, I want to quit the game at any time.
    - There is a Surrender button below the game arena to help player quit at any time.
 
@@ -125,7 +126,7 @@ __User stories__
 #### __Messages When Game Ends__
 ![Messages](assets/readme-images/messages.png)
 
-__User stories__
+User stories:
 - As a player, I want to know if I won or lost.
    - When player finishes a game, there will be a Message to let them know if they won or lost.
 
@@ -140,25 +141,23 @@ __User stories__
 
 ### Features Left to Implement
 #### __Sound Effect__
+
+User stories:
 - As a player, I want to turn on/ turn off the sound as I wish.
    - The sound is off on default. Player can turn the sound on by clicking on the Sound button.
 
 ## Technologies Used
-- HTML5, CSS3, [Bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- HTML5, CSS3, Bootstrap 5, JavaScript
 - [VSCode](https://code.visualstudio.com/) as development environment, [Git](https://git-scm.com/) as Version Control tool
 - [GitHub](https://github.com/) to host my code, [GitHub Pages](https://pages.github.com/) to publish the game
 - [Balsamig](https://balsamiq.com/) for wireframing
 - [Firefox Dev Tool](https://developer.mozilla.org/en-US/docs/Tools) for debugging
-- [Google Font](https://fonts.google.com/), [Font Awesome](https://fontawesome.com/), [Hex2rgba](http://hex2rgba.devoth.com/) for styling
+- [Google Font](https://fonts.google.com/) for styling
 - [TinyPNG](https://tinypng.com/), [Canva](https://www.canva.com/), [GIMP](https://www.gimp.org/) for optimizing and editing images
-- [W3.CSS Color Generator](https://www.w3schools.com/w3css/w3css_color_generator.asp) to generate color themes
 
 ## Testing
 ### Validator Testing
 
-__[Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)__
-
-__[Color Contrast Accessibility Validator](https://color.a11y.com/)__
 
 ### Unfixed Bugs
 
@@ -216,8 +215,6 @@ __[The live link can be found here](https://chubbyanh.github.io/show-me-what-you
 
 ### Code
 - This game was built on top of [the Simpe Memory Game in Vanilla JavaScript tutorial by Code Boxx](https://code-boxx.com/simple-memory-game-javascript/).
-
-Things I have changed:
 
 ## Acknowledgements
 
