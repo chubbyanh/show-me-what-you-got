@@ -45,22 +45,8 @@ h1 {
   font-family: 'Road Rage', cursive;
   font-size: 300%;
   text-align: center;
-  /* animates zoom effect on loading page */
-  animation-name: text-zoom;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
   /* glowing effect */
   animation: text-glow 1s ease-in-out infinite;
-}
-
-/* creates level of zoom for text-zoom */
-@keyframes text-zoom {
-  from{
-    transform: scale(1);
-  }
-  to{
-    transform: scale(1.2);
-  }
 }
 
 /* creates colors of glowing effect on text
