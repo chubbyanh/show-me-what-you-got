@@ -49,6 +49,10 @@ h1 {
   animation: text-glow 1s ease-in-out infinite;
 }
 
+h4 {
+  font-size: 120%;
+  text-align: center;
+}
 /* creates colors of glowing effect on text
 credits: https://www.w3schools.com/howto/howto_css_glowing_text.asp
 */
