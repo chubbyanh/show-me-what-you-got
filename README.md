@@ -174,6 +174,7 @@ User stories:
 - [Firefox Dev Tool](https://developer.mozilla.org/en-US/docs/Tools) for debugging
 - [Google Font](https://fonts.google.com/) for styling
 - [TinyPNG](https://tinypng.com/), [Canva](https://www.canva.com/), [GIMP](https://www.gimp.org/) for optimizing and editing images
+- [Favicon.io](https://favicon.io/) to generate favicon img
 
 ## Testing
 ### Validator Testing
