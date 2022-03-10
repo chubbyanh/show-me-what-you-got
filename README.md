@@ -2,7 +2,7 @@
 __[View the live project here](https://chubbyanh.github.io/show-me-what-you-got/)__
 
 ![Responsiveness](assets/readme-images/responsiveness.png)
-[ami.responsivedesign.is](http://ami.responsivedesign.is/)
+Image from [Am I Responsive](http://ami.responsivedesign.is/)
 
 __Show Me What You Got__ is a memory matching game using characters from [Rick and Morty tv series](https://www.imdb.com/title/tt2861424/). Gamers can play solo against the countdown timer or against the computer (a.k.a. the giant alien head). This mini webgame targets gamers using mobile/tablet but also can be played on desktop.
 
@@ -181,7 +181,7 @@ User stories:
 jshint and w3c web validator extensions were integrated into VS Code, so that my code could be checked in realtime. As far as I know, the code passed these validator tests.
 
 ### Unfixed Bugs
-- There is no known unfixed bugs.
+- There is a overflow issue on mobile screen orientation, but I ran out of time so I haven't fixed it yet.
 
 ## Deployment
 ### GitHub Pages
